@@ -144,3 +144,12 @@ public class ViewController : NSViewController{
 
     }
 }
+
+
+
+//Clipping: NSClipView provides clipping functionality, which means it defines the visible portion of the documentView. Only the content within the NSClipView is displayed, while the rest remains hidden. This ensures that only a portion of the content is visible at any given time, even if the documentView is larger than the visible area.
+
+//Scrolling: NSClipView manages the scrolling behavior of the documentView. It allows the user to scroll the content horizontally and vertically within the NSScrollView. The scroll bars (if enabled) and user interactions are coordinated by the NSClipView.
+
+//Coordinate System: NSClipView establishes the coordinate system for the documentView within the NSScrollView. It defines how the documentView is positioned and scaled within the visible area. The coordinate transformations required for scrolling and zooming are handled by the NSClipView.
+
