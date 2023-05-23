@@ -38,7 +38,7 @@ extension CalculatorButton{
         }
         func evaluateMathExpression(expression: String) -> Double? {
             let mathExpression = NSExpression(format: expression)
-            let answer = mathExpression.expressionValue(with: nil, context: nil) as! Double
+        let answer = mathExpression.expressionValue(with: nil, context: nil) as? Double
             return answer
         }
 
