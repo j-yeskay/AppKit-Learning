@@ -9,7 +9,7 @@ import Foundation
 import AppKit
 
 public var tableViewDelegate = TableViewDelegate()
-public var tableViewDataSource = TableViewDataSource()
+public var tableViewDataSource = TableViewDataSource.getTableViewDataSourceInstance()
 
 public class TableView : NSTableView{
     
@@ -22,7 +22,10 @@ public class TableView : NSTableView{
         self.dataSource = tableViewDataSource
 //        self.usesAutomaticRowHeights = true
         self.rowHeight = 100
-        self.addTableColumn(NSTableColumn())
-        self.selectionHighlightStyle = .none
+        self.addTableColumn(NSTableColumn(identifier: NSUserInterfaceItemIdentifier(rawValue: "Column")))
+    }
+    
+    public override func reloadData() {
+        super.reloadData()
     }
 }

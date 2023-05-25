@@ -20,6 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         windowController.contentViewController = viewController
         
         windowController.showWindow(nil)
+
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

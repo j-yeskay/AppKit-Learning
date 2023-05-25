@@ -1,3 +1,39 @@
+//nil
+//nil
+//nil
+//nil
+//nil
+//nil
+//nil
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 //  TableViewDataSource.swift
 //  TableViewDemo
@@ -10,7 +46,24 @@ import AppKit
 
 
 public class TableViewDataSource : NSObject, NSTableViewDataSource{
+    
+    static var dataSourceInstance : TableViewDataSource!
+    
+    var emails : [Email] = []
+    
     public func numberOfRows(in tableView: NSTableView) -> Int {
-        return 30
+        return emails.count
+    }
+    
+    private override init() {
+
+    }
+    
+    public static func getTableViewDataSourceInstance() -> TableViewDataSource{
+        if dataSourceInstance == nil{
+            dataSourceInstance = TableViewDataSource()
+        }
+        return dataSourceInstance
     }
 }
+
