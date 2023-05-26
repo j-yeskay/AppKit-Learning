@@ -11,15 +11,20 @@ import AppKit
 
 
 public class TableViewController : NSViewController{
-    public var scrollView : ScrollView!
-    public var tableView: TableView!
+    public var scrollView : TableViewManager.ScrollView!
+    public var tableViewManager : TableViewManager!
     public var emailDataController : EmailDataController!
     public override func loadView() {
         self.view = NSView(frame: NSScreen.main!.frame)
-        scrollView = ScrollView()
-        tableView = TableView()
+
+        tableViewManager = TableViewManager()
+        scrollView = tableViewManager.scrollView
+        tableViewManager.tableView.delegate = tableViewManager
+        tableViewManager.tableView.dataSource = tableViewManager
+        
+        scrollView.documentView = tableViewManager.tableView
         emailDataController = EmailDataController()
-        scrollView.documentView = tableView
+        
         
     }
     
@@ -27,10 +32,10 @@ public class TableViewController : NSViewController{
         view.addSubview(scrollView)
         
         emailDataController.getEmails()
-        (self.tableView.dataSource as! TableViewDataSource).emails = emailDataController.emails
+        (self.tableViewManager.tableView.dataSource as! TableViewManager).emailsFromNetworkCall = emailDataController.emails
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50), execute: {
-            self.tableView.reloadData()
+            self.tableViewManager.tableView.reloadData()
         })
         
         

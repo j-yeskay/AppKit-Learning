@@ -30,7 +30,7 @@ public class EmailDataController{
         
         do{
             let emails = try jsonDecoder.decode([Email].self, from: data)
-            return emails
+            return emails.reversed()
         }
         catch{
             print(error.localizedDescription)

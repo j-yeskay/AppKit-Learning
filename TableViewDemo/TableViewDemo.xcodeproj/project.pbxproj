@@ -12,14 +12,11 @@
 		2B246D3C2A1CC0EA00E52B2B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B246D3A2A1CC0EA00E52B2B /* MainMenu.xib */; };
 		2BD671CD2A1E1F8400697AA5 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671CC2A1E1F8400697AA5 /* WindowController.swift */; };
 		2BD671CF2A1E1FE400697AA5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671CE2A1E1FE400697AA5 /* TableViewController.swift */; };
-		2BD671D12A1E21C300697AA5 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671D02A1E21C300697AA5 /* TableView.swift */; };
-		2BD671D32A1E21D500697AA5 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671D22A1E21D500697AA5 /* TableViewDelegate.swift */; };
-		2BD671D52A1E21E200697AA5 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671D42A1E21E200697AA5 /* TableViewDataSource.swift */; };
 		2BD671D72A1E24E100697AA5 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671D62A1E24E100697AA5 /* ScrollView.swift */; };
-		2BD671D92A1E26C300697AA5 /* TableCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671D82A1E26C300697AA5 /* TableCellView.swift */; };
 		2BD671DB2A1F3BCE00697AA5 /* ProfilePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671DA2A1F3BCE00697AA5 /* ProfilePictureView.swift */; };
 		2BD671DD2A1F614C00697AA5 /* EmailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671DC2A1F614C00697AA5 /* EmailDataModel.swift */; };
 		2BD671DF2A1F626400697AA5 /* EmailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671DE2A1F626400697AA5 /* EmailDataController.swift */; };
+		2BD671E12A1F847700697AA5 /* RefactoredTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671E02A1F847700697AA5 /* RefactoredTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +27,11 @@
 		2B246D3D2A1CC0EA00E52B2B /* TableViewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TableViewDemo.entitlements; sourceTree = "<group>"; };
 		2BD671CC2A1E1F8400697AA5 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		2BD671CE2A1E1FE400697AA5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		2BD671D02A1E21C300697AA5 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		2BD671D22A1E21D500697AA5 /* TableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
-		2BD671D42A1E21E200697AA5 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		2BD671D62A1E24E100697AA5 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
-		2BD671D82A1E26C300697AA5 /* TableCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellView.swift; sourceTree = "<group>"; };
 		2BD671DA2A1F3BCE00697AA5 /* ProfilePictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePictureView.swift; sourceTree = "<group>"; };
 		2BD671DC2A1F614C00697AA5 /* EmailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataModel.swift; sourceTree = "<group>"; };
 		2BD671DE2A1F626400697AA5 /* EmailDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataController.swift; sourceTree = "<group>"; };
+		2BD671E02A1F847700697AA5 /* RefactoredTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,14 +70,11 @@
 				2B246D3D2A1CC0EA00E52B2B /* TableViewDemo.entitlements */,
 				2BD671CC2A1E1F8400697AA5 /* WindowController.swift */,
 				2BD671CE2A1E1FE400697AA5 /* TableViewController.swift */,
-				2BD671D02A1E21C300697AA5 /* TableView.swift */,
-				2BD671D22A1E21D500697AA5 /* TableViewDelegate.swift */,
-				2BD671D42A1E21E200697AA5 /* TableViewDataSource.swift */,
 				2BD671D62A1E24E100697AA5 /* ScrollView.swift */,
-				2BD671D82A1E26C300697AA5 /* TableCellView.swift */,
 				2BD671DA2A1F3BCE00697AA5 /* ProfilePictureView.swift */,
 				2BD671DC2A1F614C00697AA5 /* EmailDataModel.swift */,
 				2BD671DE2A1F626400697AA5 /* EmailDataController.swift */,
+				2BD671E02A1F847700697AA5 /* RefactoredTableView.swift */,
 			);
 			path = TableViewDemo;
 			sourceTree = "<group>";
@@ -158,14 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BD671D52A1E21E200697AA5 /* TableViewDataSource.swift in Sources */,
 				2BD671DB2A1F3BCE00697AA5 /* ProfilePictureView.swift in Sources */,
-				2BD671D92A1E26C300697AA5 /* TableCellView.swift in Sources */,
 				2BD671D72A1E24E100697AA5 /* ScrollView.swift in Sources */,
-				2BD671D32A1E21D500697AA5 /* TableViewDelegate.swift in Sources */,
 				2B246D372A1CC0EA00E52B2B /* AppDelegate.swift in Sources */,
+				2BD671E12A1F847700697AA5 /* RefactoredTableView.swift in Sources */,
 				2BD671DD2A1F614C00697AA5 /* EmailDataModel.swift in Sources */,
-				2BD671D12A1E21C300697AA5 /* TableView.swift in Sources */,
 				2BD671CF2A1E1FE400697AA5 /* TableViewController.swift in Sources */,
 				2BD671CD2A1E1F8400697AA5 /* WindowController.swift in Sources */,
 				2BD671DF2A1F626400697AA5 /* EmailDataController.swift in Sources */,

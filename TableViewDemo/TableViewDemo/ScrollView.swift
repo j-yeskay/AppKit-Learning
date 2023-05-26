@@ -13,7 +13,6 @@ public class ScrollView : NSScrollView{
     convenience init() {
         self.init(frame: NSRect())
         self.translatesAutoresizingMaskIntoConstraints = false
-        
         self.hasVerticalScroller = true
     }
 }
