@@ -88,13 +88,19 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
         
         @objc public func deleteEmail(){
             self.emailDataController?.delete(emailObjectId : emailObjectId)
+            var index : Int = 0
             for i in 0...(self.tableViewManager?.emailsFromNetworkCall.count)!{
                 if self.tableViewManager?.emailsFromNetworkCall[i].id == self.emailObjectId{
                     self.tableViewManager?.emailsFromNetworkCall.remove(at: i)
+                    index = i
                     break
                 }
             }
-            self.tableViewManager?.tableView.reloadData()
+            self.tableViewManager?.tableView.removeRows(at: IndexSet(integer: index), withAnimation: .slideRight)
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
+                self.tableViewManager?.tableView.reloadData()
+            })
 
         }
         

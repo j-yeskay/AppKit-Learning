@@ -80,7 +80,9 @@ public class FormView : NSView{
             self.tableViewManager?.tableView.insertRows(at: IndexSet(integer: 0), withAnimation: .slideRight)
             self.tableViewManager?.emailsFromNetworkCall.insert(Email(id: postResponseEmail!.id, emailId: postResponseEmail!.emailId, subject: postResponseEmail!.subject, body: postResponseEmail!.body), at: 0)
 //
-//            self.tableViewManager?.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
+                self.tableViewManager?.tableView.reloadData()
+            })
         }
         else{
             print("empty")
