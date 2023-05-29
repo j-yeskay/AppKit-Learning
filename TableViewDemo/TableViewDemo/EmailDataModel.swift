@@ -9,8 +9,8 @@ import Foundation
 import AppKit
 
 
-struct Email : Codable{
-    var id : Int?
+public struct Email : Codable{
+    var id : String?
     var emailId : String
     var subject : String
     var body : String

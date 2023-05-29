@@ -11,6 +11,8 @@ import AppKit
 
 public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSource{
     
+    weak var emailDataController : EmailDataController?
+    weak var refreshButton : RefreshButton?
     
     public class TableView : NSTableView{
         convenience init() {
@@ -20,7 +22,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
             self.addTableColumn(column)
             self.headerView = nil
 //            self.style = .fullWidth
-//            self.intercellSpacing = .init(width: 17, height: 10)
+//            self.intercellSpacing = .init(width: 17, height: 50)
             self.selectionHighlightStyle = .none
         }
         public override func reloadData() {
@@ -39,11 +41,18 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     }
     
     public class EmailView : NSView{
+        weak var emailDataController : EmailDataController?
+        weak var tableViewManager : TableViewManager?
+        
         var emailId : NSTextField = {
             let view = NSTextField(labelWithString: "")
             view.translatesAutoresizingMaskIntoConstraints = false
             view.lineBreakMode = .byTruncatingTail
             return view
+        }()
+        
+        var emailObjectId : String = {
+            return ""
         }()
         
         var profilePicture : ProfilePictureView = {
@@ -69,17 +78,39 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
             view.cell!.truncatesLastVisibleLine = true
             return view
         }()
+
+        
+        var deleteButton : DeleteButton = {
+            let view = DeleteButton()
+            
+            return view
+        }()
+        
+        @objc public func deleteEmail(){
+            self.emailDataController?.delete(emailObjectId : emailObjectId)
+            
+            for i in 0...(self.tableViewManager?.emailsFromNetworkCall.count)!{
+                if self.tableViewManager?.emailsFromNetworkCall[i].id == self.emailObjectId{
+                    self.tableViewManager?.emailsFromNetworkCall.remove(at: i)
+                    break
+                }
+            }
+            self.tableViewManager?.tableView.reloadData()
+
+        }
         
         convenience init() {
             self.init(frame: NSRect())
             self.translatesAutoresizingMaskIntoConstraints = false
             self.wantsLayer = true
-  
             
             self.addSubview(emailId)
             self.addSubview(profilePicture)
             self.addSubview(emailSubject)
             self.addSubview(emailBody)
+            self.addSubview(deleteButton)
+            self.deleteButton.target = self
+            self.deleteButton.action = #selector(deleteEmail)
             
             NSLayoutConstraint.activate([
                 profilePicture.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
@@ -98,8 +129,10 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
                 emailBody.leadingAnchor.constraint(equalTo: profilePicture.leadingAnchor),
                 emailBody.topAnchor.constraint(equalTo: profilePicture.bottomAnchor, constant: 5),
                 emailBody.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//                emailBody.heightAnchor.constraint(equalToConstant: 10),
-//                emailBody.widthAnchor.constraint(equalToConstant: 100)
+                
+                deleteButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
+                deleteButton.topAnchor.constraint(equalTo: emailId.topAnchor, constant: 3),
+
             ])
         }
 
@@ -108,6 +141,8 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     public class TableCellView : NSTableCellView{
         
         var emailView : EmailView = {
+            let view = EmailView()
+            
             return EmailView()
         }()
         
@@ -128,15 +163,22 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
             
         }
         
+        public override func prepareForReuse() {
+            self.layer?.backgroundColor = nil
+            self.emailView.deleteButton.isHidden = true
+        }
         
         public override func mouseExited(with event: NSEvent) {
             self.layer?.backgroundColor = nil
+            self.emailView.deleteButton.isHidden = true
+
         }
-        
+
         public override func mouseEntered(with event: NSEvent) {
             self.layer?.backgroundColor = NSColor.lightGray.withAlphaComponent(0.2).cgColor
+            self.emailView.deleteButton.isHidden = false
         }
-        
+
         public override func updateTrackingAreas() {
             super.updateTrackingAreas()
             self.addTrackingArea(NSTrackingArea.init(rect: self.bounds, options: [.activeAlways, .mouseEnteredAndExited], owner: self))
@@ -158,7 +200,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     }
     
     
-    var emailsFromNetworkCall : [Email] = []
+    public var emailsFromNetworkCall : [Email] = []
 
     
     public func numberOfRows(in tableView: NSTableView) -> Int {
@@ -166,15 +208,16 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     }
     
     public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-
         let identifier = NSUserInterfaceItemIdentifier(rawValue: "cellview")
-
         var view = tableView.makeView(withIdentifier: identifier, owner: self) as? TableCellView
         if view == nil{
             view = TableCellView()
             view?.identifier = identifier
         }
 //        setting data from the network to the view
+        
+        view?.emailView.emailObjectId = emailsFromNetworkCall[row].id!
+        
         view?.emailView.emailId.stringValue = emailsFromNetworkCall[row].emailId
         
         view?.emailView.profilePicture.originalImage = NSImage(systemSymbolName: "\(view!.emailView.emailId.stringValue.first!).circle.fill", accessibilityDescription: nil)
@@ -183,20 +226,28 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
         view?.emailView.emailSubject.stringValue = emailsFromNetworkCall[row].subject
         
         view?.emailView.emailBody.stringValue = emailsFromNetworkCall[row].body
-            
+        
+        view?.emailView.emailDataController = self.emailDataController
+        view?.emailView.tableViewManager = self
         return view
 
     }
     
     public func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        return TableRowView()
+
+        let view = TableRowView()
+
+        return view
     }
     
     public class TableRowView : NSTableRowView{
+        
         convenience init() {
             self.init(frame: NSRect())
             self.translatesAutoresizingMaskIntoConstraints = false
+            self.wantsLayer = true
+            self.layer?.cornerRadius = 15
         }
-    }
+   }
 
 }

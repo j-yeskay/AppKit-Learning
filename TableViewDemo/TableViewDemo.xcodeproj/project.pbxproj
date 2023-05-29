@@ -17,6 +17,9 @@
 		2BD671DD2A1F614C00697AA5 /* EmailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671DC2A1F614C00697AA5 /* EmailDataModel.swift */; };
 		2BD671DF2A1F626400697AA5 /* EmailDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671DE2A1F626400697AA5 /* EmailDataController.swift */; };
 		2BD671E12A1F847700697AA5 /* RefactoredTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671E02A1F847700697AA5 /* RefactoredTableView.swift */; };
+		2BD671E52A20B41900697AA5 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671E42A20B41900697AA5 /* FormView.swift */; };
+		2BD671E72A2464E800697AA5 /* RefreshButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671E62A2464E800697AA5 /* RefreshButton.swift */; };
+		2BD671E92A24919B00697AA5 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671E82A24919B00697AA5 /* DeleteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		2BD671DC2A1F614C00697AA5 /* EmailDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataModel.swift; sourceTree = "<group>"; };
 		2BD671DE2A1F626400697AA5 /* EmailDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDataController.swift; sourceTree = "<group>"; };
 		2BD671E02A1F847700697AA5 /* RefactoredTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactoredTableView.swift; sourceTree = "<group>"; };
+		2BD671E42A20B41900697AA5 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		2BD671E62A2464E800697AA5 /* RefreshButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshButton.swift; sourceTree = "<group>"; };
+		2BD671E82A24919B00697AA5 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,9 @@
 				2BD671DC2A1F614C00697AA5 /* EmailDataModel.swift */,
 				2BD671DE2A1F626400697AA5 /* EmailDataController.swift */,
 				2BD671E02A1F847700697AA5 /* RefactoredTableView.swift */,
+				2BD671E42A20B41900697AA5 /* FormView.swift */,
+				2BD671E62A2464E800697AA5 /* RefreshButton.swift */,
+				2BD671E82A24919B00697AA5 /* DeleteButton.swift */,
 			);
 			path = TableViewDemo;
 			sourceTree = "<group>";
@@ -152,9 +161,12 @@
 				2BD671DB2A1F3BCE00697AA5 /* ProfilePictureView.swift in Sources */,
 				2BD671D72A1E24E100697AA5 /* ScrollView.swift in Sources */,
 				2B246D372A1CC0EA00E52B2B /* AppDelegate.swift in Sources */,
+				2BD671E92A24919B00697AA5 /* DeleteButton.swift in Sources */,
 				2BD671E12A1F847700697AA5 /* RefactoredTableView.swift in Sources */,
 				2BD671DD2A1F614C00697AA5 /* EmailDataModel.swift in Sources */,
 				2BD671CF2A1E1FE400697AA5 /* TableViewController.swift in Sources */,
+				2BD671E52A20B41900697AA5 /* FormView.swift in Sources */,
+				2BD671E72A2464E800697AA5 /* RefreshButton.swift in Sources */,
 				2BD671CD2A1E1F8400697AA5 /* WindowController.swift in Sources */,
 				2BD671DF2A1F626400697AA5 /* EmailDataController.swift in Sources */,
 			);

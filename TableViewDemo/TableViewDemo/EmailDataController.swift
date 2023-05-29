@@ -10,18 +10,63 @@ import AppKit
 
 
 public class EmailDataController{
+    
+    let urlSession = URLSession(configuration: .default)
     var emails : [Email] = []
-    func getEmails(){
-        let url = URL(string: "http://localhost:3000/emails")!
+    var postResponse : Email?
+    
+    func get(){
+        print("called")
+        let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails")!
         let urlRequest = URLRequest(url: url)
-        let urlSession = URLSession(configuration: .default)
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
-                urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
+        self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
                     self.emails = self.decode(data: data!)!
                     dispatchGroup.leave()
                 }).resume()
+        dispatchGroup.wait()
+    }
+    
+    func post(emailData : [String : String]){
+        let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails")!
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "POST"
+        
+        let email = Email(emailId: emailData["emailId"]!, subject: emailData["subject"]!, body: emailData["body"]!)
+        
+        
+        urlRequest.httpBody = self.encode(email: email)
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
+            print("posting done")
+            self.postResponse = try? JSONDecoder().decode(Email.self, from: data!)
+            dispatchGroup.leave()
+        }).resume()
+        dispatchGroup.wait()
+
+    }
+    
+    func delete(emailObjectId : String){
+        let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails/\(emailObjectId)")!
+
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.httpMethod = "DELETE"
+        
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
+            print("deleted!")
+            dispatchGroup.leave()
+        }).resume()
         dispatchGroup.wait()
     }
     
@@ -36,7 +81,18 @@ public class EmailDataController{
             print(error.localizedDescription)
             return nil
         }
+    }
+    
+    func encode(email : Email) -> Data?{
+        let jsonEncoder = JSONEncoder()
         
-        
+        do{
+            let jsonData = try jsonEncoder.encode(email)
+            return jsonData
+        }
+        catch{
+            print(error.localizedDescription)
+        }
+        return nil
     }
 }
