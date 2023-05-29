@@ -13,6 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     public var windowController : WindowController!
     public var viewController : TableViewController!
 
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         windowController = WindowController()
         viewController = TableViewController()
@@ -20,6 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         windowController.contentViewController = viewController
         
         windowController.showWindow(nil)
+
 
     }
 

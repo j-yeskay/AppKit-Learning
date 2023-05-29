@@ -88,7 +88,6 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
         
         @objc public func deleteEmail(){
             self.emailDataController?.delete(emailObjectId : emailObjectId)
-            
             for i in 0...(self.tableViewManager?.emailsFromNetworkCall.count)!{
                 if self.tableViewManager?.emailsFromNetworkCall[i].id == self.emailObjectId{
                     self.tableViewManager?.emailsFromNetworkCall.remove(at: i)
