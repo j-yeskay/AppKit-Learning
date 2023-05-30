@@ -15,6 +15,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     weak var refreshButton : RefreshButton?
     
     public class TableView : NSTableView{
+        weak var tableViewManager : TableViewManager?
         convenience init() {
             self.init(frame: NSRect())
             self.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +27,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
             self.selectionHighlightStyle = .none
         }
         public override func reloadData() {
+//            self.tableViewManager!.refreshButton!.stopSpinningAnimation()
             super.reloadData()
         }
     }
@@ -194,6 +196,8 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     var tableView : TableView = {
         return TableView()
     }()
+    
+    
     
     var scrollView : ScrollView = {
         let view = ScrollView()

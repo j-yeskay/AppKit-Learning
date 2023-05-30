@@ -121,7 +121,8 @@ public class FormView : NSView{
             emailIdInputField.leadingAnchor.constraint(equalTo: emailSubjectLabel.trailingAnchor, constant: 20),
             emailIdInputField.topAnchor.constraint(equalTo: emailIdLabel.topAnchor),
             emailIdInputField.heightAnchor.constraint(equalTo: emailIdLabel.heightAnchor, constant: 5),
-            emailIdInputField.widthAnchor.constraint(equalToConstant: 300),
+//            emailIdInputField.widthAnchor.constraint(equalToConstant: 300),
+            emailIdInputField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
             
             emailSubjectLabel.leadingAnchor.constraint(equalTo: emailIdLabel.leadingAnchor),
             emailSubjectLabel.topAnchor.constraint(equalTo: emailIdLabel.bottomAnchor, constant: 50),
@@ -132,17 +133,20 @@ public class FormView : NSView{
             emailSubjectInputField.leadingAnchor.constraint(equalTo: emailIdInputField.leadingAnchor),
             emailSubjectInputField.topAnchor.constraint(equalTo: emailSubjectLabel.topAnchor),
             emailSubjectInputField.heightAnchor.constraint(equalTo: emailIdInputField.heightAnchor, constant: 45),
-            emailSubjectInputField.widthAnchor.constraint(equalTo: emailIdInputField.widthAnchor, constant: 40),
+//            emailSubjectInputField.widthAnchor.constraint(equalTo: emailIdInputField.widthAnchor, constant: 40),
+            emailSubjectInputField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
             
             emailBodyInputField.leadingAnchor.constraint(equalTo: emailSubjectInputField.leadingAnchor),
             emailBodyInputField.topAnchor.constraint(equalTo: emailBodyLabel.topAnchor),
             emailBodyInputField.heightAnchor.constraint(equalToConstant: 175),
-            emailBodyInputField.widthAnchor.constraint(equalTo: emailSubjectInputField.widthAnchor),
+//            emailBodyInputField.widthAnchor.constraint(equalTo: emailSubjectInputField.widthAnchor),
+            emailBodyInputField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
 
-            sendButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -100),
-            sendButton.heightAnchor.constraint(equalToConstant: 40),
+            sendButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -50),
+//            sendButton.heightAnchor.constraint(equalToConstant: 40),
             sendButton.widthAnchor.constraint(equalToConstant: 60),
-            sendButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -100)
+            sendButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -40),
+            sendButton.topAnchor.constraint(equalTo: emailBodyInputField.bottomAnchor, constant: 10)
         ])
     }
     

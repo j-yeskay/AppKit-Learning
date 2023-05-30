@@ -42,6 +42,8 @@ public class TableViewController : NSViewController{
         refreshButton.action = #selector(refreshButton.buttonClick)
         refreshButton.tableViewManager = tableViewManager
         refreshButton.emailDataController = emailDataController
+        
+        tableViewManager.tableView.tableViewManager = tableViewManager
 //
     }
     
@@ -67,7 +69,8 @@ public class TableViewController : NSViewController{
             formView.leadingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 100),
             formView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100),
             formView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            formView.heightAnchor.constraint(equalToConstant: 500),
+            formView.heightAnchor.constraint(equalToConstant: 450),
+            formView.bottomAnchor.constraint(lessThanOrEqualTo: self.view.bottomAnchor),
             
             refreshButton.leadingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 30),
             refreshButton.topAnchor.constraint(equalTo: scrollView.topAnchor),

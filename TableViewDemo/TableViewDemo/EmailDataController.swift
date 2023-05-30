@@ -24,6 +24,7 @@ public class EmailDataController{
         dispatchGroup.enter()
         self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
                     self.emails = self.decode(data: data!)!
+            print("network call done")
                     dispatchGroup.leave()
                 }).resume()
         dispatchGroup.wait()
