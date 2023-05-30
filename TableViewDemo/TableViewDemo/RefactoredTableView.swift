@@ -13,6 +13,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     
     weak var emailDataController : EmailDataController?
     weak var refreshButton : RefreshButton?
+    var lastlySelectedCellView : TableCellView?
     
     public class TableView : NSTableView{
         weak var tableViewManager : TableViewManager?
@@ -27,7 +28,6 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
             self.selectionHighlightStyle = .none
         }
         public override func reloadData() {
-//            self.tableViewManager!.refreshButton!.stopSpinningAnimation()
             super.reloadData()
         }
     }
@@ -99,7 +99,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
                 }
             }
             self.tableViewManager?.tableView.removeRows(at: IndexSet(integer: index), withAnimation: .slideRight)
-
+            EmailDetailView.getEmailDetailViewInstance().closeButton.performClick(nil)
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
                 self.tableViewManager?.tableView.reloadData()
             })
@@ -146,12 +146,14 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     }
     
     public class TableCellView : NSTableCellView{
-        
         var emailView : EmailView = {
             let view = EmailView()
             
             return EmailView()
         }()
+        
+        var emailDetailView = EmailDetailView.getEmailDetailViewInstance()
+       
         
         convenience init() {
             self.init(frame: NSRect())
@@ -176,13 +178,31 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
         }
         
         public override func mouseExited(with event: NSEvent) {
-            self.layer?.backgroundColor = nil
+            if self.emailView.tableViewManager?.lastlySelectedCellView as? TableCellView != self{
+                self.layer?.backgroundColor = nil
+            }
             self.emailView.deleteButton.isHidden = true
-
         }
+        
+        public override func mouseDown(with event: NSEvent) {
+            (self.emailView.tableViewManager?.lastlySelectedCellView as? TableCellView)?.layer?.backgroundColor = nil
+            self.emailView.tableViewManager?.lastlySelectedCellView = self
+            self.layer?.backgroundColor = NSColor.red.withAlphaComponent(0.5).cgColor
+            
+            emailDetailView.isHidden = false
 
+            (emailDetailView.emailSubjectScrollView.documentView as! NSTextView).string = self.emailView.emailSubject.stringValue
+            
+            (emailDetailView.emailBodyScrollView.documentView as! NSTextView).string = self.emailView.emailBody.stringValue
+            
+            emailDetailView.emailId.string = self.emailView.emailId.stringValue
+            
+        }
+    
         public override func mouseEntered(with event: NSEvent) {
-            self.layer?.backgroundColor = NSColor.lightGray.withAlphaComponent(0.2).cgColor
+            if self.emailView.tableViewManager?.lastlySelectedCellView as? TableCellView != self{
+                self.layer?.backgroundColor = NSColor.lightGray.withAlphaComponent(0.2).cgColor
+            }
             self.emailView.deleteButton.isHidden = false
         }
 
@@ -238,6 +258,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
         
         view?.emailView.emailDataController = self.emailDataController
         view?.emailView.tableViewManager = self
+        
         return view
 
     }

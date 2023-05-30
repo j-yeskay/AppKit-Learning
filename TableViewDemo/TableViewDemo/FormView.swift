@@ -82,6 +82,10 @@ public class FormView : NSView{
 //
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
                 self.tableViewManager?.tableView.reloadData()
+                EmailDetailView.getEmailDetailViewInstance().closeButton.performClick(nil)
+                self.emailIdInputField.stringValue = ""
+                self.emailBodyInputField.stringValue = ""
+                self.emailSubjectInputField.stringValue = ""
             })
         }
         else{

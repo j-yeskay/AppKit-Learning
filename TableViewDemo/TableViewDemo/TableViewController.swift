@@ -19,6 +19,8 @@ public class TableViewController : NSViewController{
     
     public var refreshButton : RefreshButton!
     
+    public var emailDetailView : EmailDetailView!
+    
     public override func loadView() {
         self.view = NSView(frame: NSScreen.main!.frame)
 
@@ -44,13 +46,17 @@ public class TableViewController : NSViewController{
         refreshButton.emailDataController = emailDataController
         
         tableViewManager.tableView.tableViewManager = tableViewManager
-//
+        
+        emailDetailView = EmailDetailView.getEmailDetailViewInstance()
+        emailDetailView.tableViewManager = tableViewManager
+
     }
     
     public override func viewDidLoad() {
         view.addSubview(scrollView)
         view.addSubview(formView)
         view.addSubview(refreshButton)
+        view.addSubview(emailDetailView)
         
         emailDataController.get()
         (self.tableViewManager.tableView.dataSource as! TableViewManager).emailsFromNetworkCall = emailDataController.emails
@@ -74,6 +80,11 @@ public class TableViewController : NSViewController{
             
             refreshButton.leadingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 30),
             refreshButton.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            
+            emailDetailView.topAnchor.constraint(equalTo: formView.bottomAnchor, constant: 10),
+            emailDetailView.trailingAnchor.constraint(equalTo: formView.trailingAnchor),
+            emailDetailView.leadingAnchor.constraint(equalTo: formView.leadingAnchor),
+            emailDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
     }
 }
