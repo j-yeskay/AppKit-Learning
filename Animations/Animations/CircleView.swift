@@ -7,62 +7,24 @@
 
 import Foundation
 import AppKit
-
-//
-//public class CircleView : NSView{
-//    public override func draw(_ dirtyRect: NSRect) {
-//        super.draw(dirtyRect)
-//
-//        // Create an NSBezierPath instance
-//        let circlePath = NSBezierPath()
-//
-//        // Define the circle's shape within a rectangle
-//        print(dirtyRect)
-////        let circleRect = NSRect(x: 0, y: 0, width: 600, height: 600)
-//        let circleRect = NSRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: dirtyRect.width, height: dirtyRect.height))
-//        circlePath.appendOval(in: circleRect)
-//
-//        // Set the fill color
-//        NSColor.red.setFill()
-//
-//        // Fill the circle
-//        circlePath.fill()
-//
-//        // Set the stroke color
-//        NSColor.white.setStroke()
-//
-//        // Add an outline to the circle
-//        circlePath.stroke()
-//
-//    }
-//}
-
-//public class CircleView : NSView{
-//    public override func draw(_ dirtyRect: NSRect) {
-//        super.draw(dirtyRect)
-//
-//
-//
-//
-//    }
-//}
-
 import Cocoa
 
 public class CircleView: NSView {
     
     public let totalSpendings : Int = 100
     
+    weak var viewControllerRef : ViewController?
+    
     let categoryPercentages : [NSColor : Double] = [NSColor.red : 25.0, NSColor.yellow : 65.0, NSColor.green : 10.0, NSColor.white : 10.0]
+    
+    let colors = [NSColor.red, NSColor.yellow, NSColor.green, NSColor.white]
+    let percentages = [25.0, 65.0, 10.0, 10.0]
+    
+    var boundsAndColors : [NSColor: NSRect] = [:]
 
     public override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
 
-        // Calculate the number of colors
-//        let numberOfColors = colors.count
-
-        // Calculate the angle per color
-        
         let centerX = dirtyRect.midX
         let centerY = dirtyRect.midY
         
@@ -71,56 +33,37 @@ public class CircleView: NSView {
         
         var startAngle = 0.0
         
-        for i in categoryPercentages{
-            let angle = (360.0 / 100) * i.value
+        for i in 0...percentages.count - 1{
+            let angle = (360.0 / 100) * percentages[i]
             
-            var circlePath = NSBezierPath()
+            let circlePath = NSBezierPath()
             
-            var endAngle = startAngle + angle
+            let endAngle = startAngle + angle
             
             circlePath.move(to: circleCenter)
             
             circlePath.appendArc(withCenter: circleCenter, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: false)
             
-            i.key.setFill()
+            colors[i].setFill()
+//            NSColor.clear.setFill()
             circlePath.fill()
             
+            
+            boundsAndColors[colors[i]] = circlePath.bounds
+//            draw(circlePath.bounds)
+            
+//            NSTextField(labelWithString: "\(NSColor)")
+            
             startAngle = endAngle
-        }
-        
-        
-//        let anglePerColor = 360.0 / 2.0
-//
-//        // Calculate the circle's center and radius
-//        let centerX = dirtyRect.midX
-//        let centerY = dirtyRect.midY
-//        let radius = min(dirtyRect.width, dirtyRect.height) / 2
-//        let circleCenter = NSPoint(x: centerX, y: centerY)
-//
-//        // Create an NSBezierPath instance
-//        var circlePath = NSBezierPath()
-//
-//        let redStartAngle = 0.0
-//        let redEndAngle = redStartAngle + anglePerColor
-//
-//        circlePath.move(to: NSPoint(x: centerX, y: centerY))
-//
-//        circlePath.appendArc(withCenter: circleCenter, radius: radius, startAngle: redStartAngle, endAngle: redEndAngle, clockwise: false)
-//
-//        NSColor.red.setFill()
-//        circlePath.fill()
-//
-//        circlePath = NSBezierPath()
-//
-//        let blueStartAngle = redEndAngle
-//        let blueEndAngle = blueStartAngle + anglePerColor
-//
-//        circlePath.move(to: circleCenter)
-//
-//        circlePath.appendArc(withCenter: circleCenter, radius: radius, startAngle: blueStartAngle, endAngle: blueEndAngle, clockwise: false)
-//
-//        NSColor.white.setFill()
-//        circlePath.fill()
 
+        }
+//        self.viewControllerRef?.addText()
     }
+    
+//    public func addText(){
+//        print(boundsAndColors)
+//        for i in boundsAndColors{
+//            self.addSubview(NSView(frame: i.value))
+//        }
+//    }
 }
