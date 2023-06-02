@@ -78,21 +78,32 @@ public class TableViewManager : NSObject, NSTableViewDataSource, NSTableViewDele
             return NSTextField(labelWithString: String(data[row].amount))
         }
     }
+    
     public func tableView(_ tableView: NSTableView, sortDescriptorsDidChange oldDescriptors: [NSSortDescriptor]) {
 
-        if oldDescriptors == []{
-            self.data = self.data.sorted(by: {
-                d1, d2 in
-                return d1.amount < d2.amount
+//        if oldDescriptors == []{
+//            self.data = self.data.sorted(by: {
+//                d1, d2 in
+//                return d1.amount < d2.amount
+//            })
+//        } else {
+//            self.data = self.data.sorted(by: {
+//                d1, d2 in
+//                if oldDescriptors.first!.ascending {
+//                    return d1.amount > d2.amount
+//                } else {
+//                    return d1.amount < d2.amount
+//                }
+//            })
+//        }
+        if tableView.sortDescriptors.first!.ascending{
+            self.data = self.data.sorted(by: {data1, data2 in
+                return data1.amount < data2.amount
             })
-        } else {
-            self.data = self.data.sorted(by: {
-                d1, d2 in
-                if oldDescriptors.first!.ascending {
-                    return d1.amount > d2.amount
-                } else {
-                    return d1.amount < d2.amount
-                }
+        }
+        else{
+            self.data = self.data.sorted(by: {data1, data2 in
+                return data1.amount > data2.amount
             })
         }
         

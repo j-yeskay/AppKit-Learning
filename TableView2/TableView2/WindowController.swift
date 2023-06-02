@@ -12,5 +12,7 @@ import AppKit
 public class WindowController : NSWindowController{
     convenience init() {
         self.init(window: NSWindow(contentRect: NSScreen.main!.frame, styleMask: [.closable, .resizable, .miniaturizable, .titled], backing: .buffered, defer: false))
+        
     }
+
 }

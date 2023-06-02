@@ -9,6 +9,44 @@ import Foundation
 import AppKit
 
 
+//public class ViewController : NSViewController, NSSplitViewDelegate{
+//    public override func loadView() {
+//        let splitView = NSSplitView(frame: NSScreen.main!.frame)
+//
+//        splitView.dividerStyle = .thin
+//
+//        splitView.isVertical = true
+//
+//        splitView.delegate = self
+//
+//        let leftView = NSView(frame: NSScreen.main!.frame)
+//        leftView.translatesAutoresizingMaskIntoConstraints = false
+//
+//        let rightView = NSView(frame: NSScreen.main!.frame)
+//
+//        splitView.addArrangedSubview(leftView)
+//        splitView.addArrangedSubview(rightView)
+//
+//
+//        NSLayoutConstraint.activate([
+//            leftView.widthAnchor.constraint(greaterThanOrEqualToConstant: 100),
+//            rightView.widthAnchor.constraint(equalToConstant: 100)
+//        ])
+//
+//
+//        self.view = splitView
+//
+//    }
+//
+//    public func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
+//        true
+//    }
+//
+//    public override func viewDidLoad() {
+//
+//    }
+//}
+
 public class ViewController : NSViewController{
     public var tableViewManager : TableViewManager!
     
