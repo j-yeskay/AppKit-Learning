@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  SplitViewDemo
+//  OutlineViewDemo
 //
-//  Created by sathish-pt6686 on 31/05/23.
+//  Created by sathish-pt6686 on 05/06/23.
 //
 
 import Cocoa
@@ -11,12 +11,12 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     public var windowControler : WindowController!
-    public var viewController : ViewController!
+
     public var outlineViewController : OutlineViewController!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         windowControler = WindowController()
-        viewController = ViewController()
+
         outlineViewController = OutlineViewController()
         
 //        windowControler.contentViewController = viewController
@@ -37,4 +37,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 }
+
 

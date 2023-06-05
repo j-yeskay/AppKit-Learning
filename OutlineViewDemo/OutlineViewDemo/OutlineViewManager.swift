@@ -1,10 +1,3 @@
-//
-//  OutlineViewController.swift
-//  SplitViewDemo
-//
-//  Created by sathish-pt6686 on 01/06/23.
-//
-
 import Foundation
 import AppKit
 
@@ -13,6 +6,7 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
         let view = NSOutlineView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.wantsLayer = true
+        view.addTableColumn(NSTableColumn())
         return view
     }()
     
@@ -25,7 +19,7 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
     
     public func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
             // Return true if the item can be expanded, false otherwise
-        return false
+        return true
     }
         
     public func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
@@ -35,12 +29,13 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
         
     public func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
             // Return the child item at the specified index for the specified parent item
-        return NSTextField(labelWithString: "hello")
+        return NSTextField(labelWithString: "hel")
     }
         
-    public func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
-            return NSTextField(labelWithString: "hello")
-    }
+//    public func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
+//            return NSTextField(labelWithString: "hello")
+//    }
     
     
 }
+

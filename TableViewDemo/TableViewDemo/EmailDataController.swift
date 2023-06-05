@@ -14,17 +14,18 @@ public class EmailDataController{
     let urlSession = URLSession(configuration: .default)
     var emails : [Email] = []
     var postResponse : Email?
+    var pageNo : Int = 1
     
     func get(){
-        print("called")
+//        print("called")
         let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails")!
         let urlRequest = URLRequest(url: url)
         let dispatchGroup = DispatchGroup()
         
         dispatchGroup.enter()
         self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
-                    self.emails = self.decode(data: data!)!
-            print("network call done")
+            self.emails = self.emails + self.decode(data: data!)!
+            self.pageNo = self.pageNo + 1
                     dispatchGroup.leave()
                 }).resume()
         dispatchGroup.wait()

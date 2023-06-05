@@ -29,6 +29,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
         }
         public override func reloadData() {
             super.reloadData()
+            print("called")
         }
     }
     
@@ -39,6 +40,12 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
             self.translatesAutoresizingMaskIntoConstraints = false
             
             self.hasVerticalScroller = true
+
+        }
+        
+        public override func scrollWheel(with event: NSEvent) {
+            super.scrollWheel(with: event)
+            
         }
     }
     
@@ -233,6 +240,7 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
 
     
     public func numberOfRows(in tableView: NSTableView) -> Int {
+//        print("number called")
         return emailsFromNetworkCall.count
     }
     
@@ -263,12 +271,32 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
 
     }
     
+    
+    
     public func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
 
         let view = TableRowView()
-
+//        let lastRow = self.emailsFromNetworkCall.count - 1
+//        if row == lastRow{
+//            print(row)
+//            if (self.emailsFromNetworkCall.count != 37){
+//                emailDataController?.get()
+//            }
+//
+//            let diff = emailDataController!.emails.count - self.emailsFromNetworkCall.count
+//            self.emailsFromNetworkCall = emailDataController!.emails
+////            self.emailsFromNetworkCall = self.emailsFromNetworkCall + self.emailsFromNetworkCall
+////            tableView.reloadData(forRowIndexes: IndexSet(integersIn: lastRow...self.emailsFromNetworkCall.count - 1), columnIndexes: IndexSet(integer: 0))
+////            tableView.insertRows(at: IndexSet(integersIn: lastRow + 1...self.emailsFromNetworkCall.count - 1))
+//            if diff > 0 {
+//                DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
+//                    tableView.reloadData()
+//                })
+//            }
+//        }
         return view
     }
+    
     
     public class TableRowView : NSTableRowView{
         

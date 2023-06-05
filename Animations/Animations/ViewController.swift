@@ -33,6 +33,8 @@ public class ViewController : NSViewController{
 
     }
     
+    
+    
 //    public func addText(){
 //        for i in circle.boundsAndColors{
 ////            let newView = NSTextView(frame: i.value)

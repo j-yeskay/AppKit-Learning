@@ -59,7 +59,7 @@ public class CircleView: NSView {
         }
 //        self.viewControllerRef?.addText()
     }
-    
+
 //    public func addText(){
 //        print(boundsAndColors)
 //        for i in boundsAndColors{

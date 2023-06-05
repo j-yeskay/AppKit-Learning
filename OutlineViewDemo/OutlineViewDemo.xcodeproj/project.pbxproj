@@ -7,29 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B5FF5B72A276264008F45D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5B62A276264008F45D2 /* AppDelegate.swift */; };
-		2B5FF5B92A276266008F45D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B5FF5B82A276266008F45D2 /* Assets.xcassets */; };
-		2B5FF5BC2A276266008F45D2 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B5FF5BA2A276266008F45D2 /* MainMenu.xib */; };
-		2B5FF5C52A27629B008F45D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5C32A27629B008F45D2 /* ViewController.swift */; };
-		2B5FF5C62A27629B008F45D2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5C42A27629B008F45D2 /* WindowController.swift */; };
-		2B5FF5C82A288C71008F45D2 /* OutlineViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5C72A288C71008F45D2 /* OutlineViewManager.swift */; };
-		2B5FF5CA2A288C97008F45D2 /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5C92A288C97008F45D2 /* OutlineViewController.swift */; };
+		2B4DDEBF2A2DBA22009739ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDEBE2A2DBA22009739ED /* AppDelegate.swift */; };
+		2B4DDEC12A2DBA23009739ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DDEC02A2DBA23009739ED /* Assets.xcassets */; };
+		2B4DDEC42A2DBA23009739ED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B4DDEC22A2DBA23009739ED /* MainMenu.xib */; };
+		2B4DDECC2A2DBA54009739ED /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDECB2A2DBA54009739ED /* OutlineViewController.swift */; };
+		2B4DDECE2A2DBAC9009739ED /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDECD2A2DBAC9009739ED /* WindowController.swift */; };
+		2B4DDED02A2DBAE4009739ED /* OutlineViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDECF2A2DBAE4009739ED /* OutlineViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B5FF5B32A276264008F45D2 /* SplitViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B5FF5B62A276264008F45D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2B5FF5B82A276266008F45D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2B5FF5BB2A276266008F45D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2B5FF5BD2A276266008F45D2 /* SplitViewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitViewDemo.entitlements; sourceTree = "<group>"; };
-		2B5FF5C32A27629B008F45D2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../TableView2/TableView2/ViewController.swift; sourceTree = "<group>"; };
-		2B5FF5C42A27629B008F45D2 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowController.swift; path = ../../TableView2/TableView2/WindowController.swift; sourceTree = "<group>"; };
-		2B5FF5C72A288C71008F45D2 /* OutlineViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineViewManager.swift; sourceTree = "<group>"; };
-		2B5FF5C92A288C97008F45D2 /* OutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineViewController.swift; sourceTree = "<group>"; };
+		2B4DDEBB2A2DBA22009739ED /* OutlineViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutlineViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4DDEBE2A2DBA22009739ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B4DDEC02A2DBA23009739ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B4DDEC32A2DBA23009739ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2B4DDEC52A2DBA23009739ED /* OutlineViewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OutlineViewDemo.entitlements; sourceTree = "<group>"; };
+		2B4DDECB2A2DBA54009739ED /* OutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineViewController.swift; sourceTree = "<group>"; };
+		2B4DDECD2A2DBAC9009739ED /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		2B4DDECF2A2DBAE4009739ED /* OutlineViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineViewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2B5FF5B02A276264008F45D2 /* Frameworks */ = {
+		2B4DDEB82A2DBA22009739ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,73 +37,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B5FF5AA2A276264008F45D2 = {
+		2B4DDEB22A2DBA22009739ED = {
 			isa = PBXGroup;
 			children = (
-				2B5FF5B52A276264008F45D2 /* SplitViewDemo */,
-				2B5FF5B42A276264008F45D2 /* Products */,
+				2B4DDEBD2A2DBA22009739ED /* OutlineViewDemo */,
+				2B4DDEBC2A2DBA22009739ED /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2B5FF5B42A276264008F45D2 /* Products */ = {
+		2B4DDEBC2A2DBA22009739ED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B5FF5B32A276264008F45D2 /* SplitViewDemo.app */,
+				2B4DDEBB2A2DBA22009739ED /* OutlineViewDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B5FF5B52A276264008F45D2 /* SplitViewDemo */ = {
+		2B4DDEBD2A2DBA22009739ED /* OutlineViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2B5FF5C32A27629B008F45D2 /* ViewController.swift */,
-				2B5FF5C42A27629B008F45D2 /* WindowController.swift */,
-				2B5FF5B62A276264008F45D2 /* AppDelegate.swift */,
-				2B5FF5B82A276266008F45D2 /* Assets.xcassets */,
-				2B5FF5BA2A276266008F45D2 /* MainMenu.xib */,
-				2B5FF5BD2A276266008F45D2 /* SplitViewDemo.entitlements */,
-				2B5FF5C72A288C71008F45D2 /* OutlineViewManager.swift */,
-				2B5FF5C92A288C97008F45D2 /* OutlineViewController.swift */,
+				2B4DDEBE2A2DBA22009739ED /* AppDelegate.swift */,
+				2B4DDEC02A2DBA23009739ED /* Assets.xcassets */,
+				2B4DDEC22A2DBA23009739ED /* MainMenu.xib */,
+				2B4DDEC52A2DBA23009739ED /* OutlineViewDemo.entitlements */,
+				2B4DDECB2A2DBA54009739ED /* OutlineViewController.swift */,
+				2B4DDECD2A2DBAC9009739ED /* WindowController.swift */,
+				2B4DDECF2A2DBAE4009739ED /* OutlineViewManager.swift */,
 			);
-			path = SplitViewDemo;
+			path = OutlineViewDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B5FF5B22A276264008F45D2 /* SplitViewDemo */ = {
+		2B4DDEBA2A2DBA22009739ED /* OutlineViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B5FF5C02A276266008F45D2 /* Build configuration list for PBXNativeTarget "SplitViewDemo" */;
+			buildConfigurationList = 2B4DDEC82A2DBA23009739ED /* Build configuration list for PBXNativeTarget "OutlineViewDemo" */;
 			buildPhases = (
-				2B5FF5AF2A276264008F45D2 /* Sources */,
-				2B5FF5B02A276264008F45D2 /* Frameworks */,
-				2B5FF5B12A276264008F45D2 /* Resources */,
+				2B4DDEB72A2DBA22009739ED /* Sources */,
+				2B4DDEB82A2DBA22009739ED /* Frameworks */,
+				2B4DDEB92A2DBA22009739ED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SplitViewDemo;
-			productName = SplitViewDemo;
-			productReference = 2B5FF5B32A276264008F45D2 /* SplitViewDemo.app */;
+			name = OutlineViewDemo;
+			productName = OutlineViewDemo;
+			productReference = 2B4DDEBB2A2DBA22009739ED /* OutlineViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2B5FF5AB2A276264008F45D2 /* Project object */ = {
+		2B4DDEB32A2DBA22009739ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					2B5FF5B22A276264008F45D2 = {
-						CreatedOnToolsVersion = 14.3;
+					2B4DDEBA2A2DBA22009739ED = {
+						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 2B5FF5AE2A276264008F45D2 /* Build configuration list for PBXProject "SplitViewDemo" */;
+			buildConfigurationList = 2B4DDEB62A2DBA22009739ED /* Build configuration list for PBXProject "OutlineViewDemo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -113,48 +110,47 @@
 				en,
 				Base,
 			);
-			mainGroup = 2B5FF5AA2A276264008F45D2;
-			productRefGroup = 2B5FF5B42A276264008F45D2 /* Products */;
+			mainGroup = 2B4DDEB22A2DBA22009739ED;
+			productRefGroup = 2B4DDEBC2A2DBA22009739ED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B5FF5B22A276264008F45D2 /* SplitViewDemo */,
+				2B4DDEBA2A2DBA22009739ED /* OutlineViewDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2B5FF5B12A276264008F45D2 /* Resources */ = {
+		2B4DDEB92A2DBA22009739ED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B5FF5B92A276266008F45D2 /* Assets.xcassets in Resources */,
-				2B5FF5BC2A276266008F45D2 /* MainMenu.xib in Resources */,
+				2B4DDEC12A2DBA23009739ED /* Assets.xcassets in Resources */,
+				2B4DDEC42A2DBA23009739ED /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2B5FF5AF2A276264008F45D2 /* Sources */ = {
+		2B4DDEB72A2DBA22009739ED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B5FF5C52A27629B008F45D2 /* ViewController.swift in Sources */,
-				2B5FF5C82A288C71008F45D2 /* OutlineViewManager.swift in Sources */,
-				2B5FF5C62A27629B008F45D2 /* WindowController.swift in Sources */,
-				2B5FF5CA2A288C97008F45D2 /* OutlineViewController.swift in Sources */,
-				2B5FF5B72A276264008F45D2 /* AppDelegate.swift in Sources */,
+				2B4DDEBF2A2DBA22009739ED /* AppDelegate.swift in Sources */,
+				2B4DDED02A2DBAE4009739ED /* OutlineViewManager.swift in Sources */,
+				2B4DDECE2A2DBAC9009739ED /* WindowController.swift in Sources */,
+				2B4DDECC2A2DBA54009739ED /* OutlineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2B5FF5BA2A276266008F45D2 /* MainMenu.xib */ = {
+		2B4DDEC22A2DBA23009739ED /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2B5FF5BB2A276266008F45D2 /* Base */,
+				2B4DDEC32A2DBA23009739ED /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -162,7 +158,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2B5FF5BE2A276266008F45D2 /* Debug */ = {
+		2B4DDEC62A2DBA23009739ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -222,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		2B5FF5BF2A276266008F45D2 /* Release */ = {
+		2B4DDEC72A2DBA23009739ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -275,12 +271,12 @@
 			};
 			name = Release;
 		};
-		2B5FF5C12A276266008F45D2 /* Debug */ = {
+		2B4DDEC92A2DBA23009739ED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SplitViewDemo/SplitViewDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OutlineViewDemo/OutlineViewDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -295,19 +291,19 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Test.SplitViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.OutlineViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		2B5FF5C22A276266008F45D2 /* Release */ = {
+		2B4DDECA2A2DBA23009739ED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = SplitViewDemo/SplitViewDemo.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OutlineViewDemo/OutlineViewDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -322,7 +318,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Test.SplitViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.OutlineViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -332,25 +328,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B5FF5AE2A276264008F45D2 /* Build configuration list for PBXProject "SplitViewDemo" */ = {
+		2B4DDEB62A2DBA22009739ED /* Build configuration list for PBXProject "OutlineViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B5FF5BE2A276266008F45D2 /* Debug */,
-				2B5FF5BF2A276266008F45D2 /* Release */,
+				2B4DDEC62A2DBA23009739ED /* Debug */,
+				2B4DDEC72A2DBA23009739ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B5FF5C02A276266008F45D2 /* Build configuration list for PBXNativeTarget "SplitViewDemo" */ = {
+		2B4DDEC82A2DBA23009739ED /* Build configuration list for PBXNativeTarget "OutlineViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B5FF5C12A276266008F45D2 /* Debug */,
-				2B5FF5C22A276266008F45D2 /* Release */,
+				2B4DDEC92A2DBA23009739ED /* Debug */,
+				2B4DDECA2A2DBA23009739ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2B5FF5AB2A276264008F45D2 /* Project object */;
+	rootObject = 2B4DDEB32A2DBA22009739ED /* Project object */;
 }

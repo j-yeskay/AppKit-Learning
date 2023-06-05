@@ -1,10 +1,3 @@
-//
-//  OutlineView.swift
-//  SplitViewDemo
-//
-//  Created by sathish-pt6686 on 01/06/23.
-//
-
 import Foundation
 import AppKit
 
@@ -26,11 +19,12 @@ public class OutlineViewController : NSViewController{
         self.view.addSubview(outlineViewManager.scrollView)
         
         NSLayoutConstraint.activate([
-            outlineViewManager.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
-            outlineViewManager.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            outlineViewManager.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
-            outlineViewManager.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            outlineViewManager.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 100),
+            outlineViewManager.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -500),
+            outlineViewManager.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
+            outlineViewManager.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -500),
         ])
         
     }
 }
+

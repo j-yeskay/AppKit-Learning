@@ -43,6 +43,14 @@ public class TableViewManager : NSObject, NSTableViewDataSource, NSTableViewDele
             let sortDescriptor = NSSortDescriptor(key: "amount", ascending: true)
         
             column2.sortDescriptorPrototype = sortDescriptor
+            
+            
+            column1.headerCell = NSTableHeaderCell(textCell: "Column 1")
+            column1.headerCell.alignment = .center
+            
+            column2.headerCell = NSTableHeaderCell(textCell: "Column 2")
+            column2.headerCell.alignment = .center
+
         }
         public override func reloadData() {
             super.reloadData()
@@ -72,10 +80,14 @@ public class TableViewManager : NSObject, NSTableViewDataSource, NSTableViewDele
 
     public func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         if tableColumn?.identifier == NSUserInterfaceItemIdentifier(rawValue: "Column1"){
-            return NSTextField(labelWithString: data[row].name)
+            let cellView = NSTextField(labelWithString: data[row].name)
+            cellView.alignment = .center
+            return cellView
         }
         else{
-            return NSTextField(labelWithString: String(data[row].amount))
+            let cellView = NSTextField(labelWithString: String(data[row].amount))
+            cellView.alignment = .center
+            return cellView
         }
     }
     
