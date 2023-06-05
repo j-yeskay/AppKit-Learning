@@ -19,10 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         outlineViewController = OutlineViewController()
         
-//        windowControler.contentViewController = viewController
-        
         windowControler.contentViewController = outlineViewController
-//        windowControler.window!.setContentSize(NSSize(width: 100, height: 100))
         
         windowControler.showWindow(nil)
     }

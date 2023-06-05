@@ -13,6 +13,8 @@
 		2B4DDECC2A2DBA54009739ED /* OutlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDECB2A2DBA54009739ED /* OutlineViewController.swift */; };
 		2B4DDECE2A2DBAC9009739ED /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDECD2A2DBAC9009739ED /* WindowController.swift */; };
 		2B4DDED02A2DBAE4009739ED /* OutlineViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDECF2A2DBAE4009739ED /* OutlineViewManager.swift */; };
+		2B4DDED22A2DBE13009739ED /* TaskDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDED12A2DBE13009739ED /* TaskDataController.swift */; };
+		2B4DDED42A2DBE1D009739ED /* TaskDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4DDED32A2DBE1D009739ED /* TaskDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		2B4DDECB2A2DBA54009739ED /* OutlineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineViewController.swift; sourceTree = "<group>"; };
 		2B4DDECD2A2DBAC9009739ED /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		2B4DDECF2A2DBAE4009739ED /* OutlineViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineViewManager.swift; sourceTree = "<group>"; };
+		2B4DDED12A2DBE13009739ED /* TaskDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataController.swift; sourceTree = "<group>"; };
+		2B4DDED32A2DBE1D009739ED /* TaskDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				2B4DDECB2A2DBA54009739ED /* OutlineViewController.swift */,
 				2B4DDECD2A2DBAC9009739ED /* WindowController.swift */,
 				2B4DDECF2A2DBAE4009739ED /* OutlineViewManager.swift */,
+				2B4DDED12A2DBE13009739ED /* TaskDataController.swift */,
+				2B4DDED32A2DBE1D009739ED /* TaskDataModel.swift */,
 			);
 			path = OutlineViewDemo;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B4DDED22A2DBE13009739ED /* TaskDataController.swift in Sources */,
 				2B4DDEBF2A2DBA22009739ED /* AppDelegate.swift in Sources */,
+				2B4DDED42A2DBE1D009739ED /* TaskDataModel.swift in Sources */,
 				2B4DDED02A2DBAE4009739ED /* OutlineViewManager.swift in Sources */,
 				2B4DDECE2A2DBAC9009739ED /* WindowController.swift in Sources */,
 				2B4DDECC2A2DBA54009739ED /* OutlineViewController.swift in Sources */,
