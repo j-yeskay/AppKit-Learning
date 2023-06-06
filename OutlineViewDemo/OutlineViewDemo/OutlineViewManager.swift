@@ -26,9 +26,36 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
             self.selectionHighlightStyle = .none
         }
         
+        @objc
+        public func markAsCompleteIncomplete(sender:Any){
+            let taskText = (((sender as! NSMenuItem).representedObject) as! TaskText)
+            if taskText.isCompleted!{
+                taskText.isCompleted = false
+            }
+            else{
+                taskText.isCompleted = true
+            }
+        }
+        
         public override func rightMouseDown(with event: NSEvent) {
             if isTaskItem{
-                print("yes")
+                let menu = NSMenu()
+                
+                let menuItem = NSMenuItem()
+                menuItem.target = self
+                let taskText = (self.subviews.first!) as! TaskText
+                
+                if taskText.isCompleted!{
+                    menuItem.title = "Mark as Incomplete"
+                }
+                else{
+                    menuItem.title = "Mark as Complete"
+                }
+                menuItem.representedObject = taskText
+                menuItem.action = #selector(markAsCompleteIncomplete(sender:))
+                menu.addItem(menuItem)
+                NSMenu.popUpContextMenu(menu, with: event, for: self)
+                
             }
             else{
                 print("no")
@@ -58,6 +85,17 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
             let attributedString = NSAttributedString(string: taskTitle)
             self.init(labelWithAttributedString: attributedString)
             self.wantsLayer = true
+        }
+        
+        public var isCompleted : Bool?{
+            didSet{
+                if isCompleted!{
+                    self.strike()
+                }
+                else{
+                    self.unStrike()
+                }
+            }
         }
         
         public func strike(){
@@ -123,7 +161,10 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
             let taskItem = (item as! Task.TaskItem)
             let taskText = TaskText(taskTitle: taskItem.title)
             if taskItem.completed{
-                taskText.strike()
+                taskText.isCompleted = true
+            }
+            else{
+                taskText.isCompleted = false
             }
             return taskText
         }
