@@ -81,7 +81,7 @@ public class FormView : NSView{
             self.tableViewManager?.emailsFromNetworkCall.insert(Email(id: postResponseEmail!.id, emailId: postResponseEmail!.emailId, subject: postResponseEmail!.subject, body: postResponseEmail!.body), at: 0)
 //
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
-//                self.tableViewManager?.tableView.reloadData()
+                self.tableViewManager?.tableView.reloadData()
                 EmailDetailView.getEmailDetailViewInstance().closeButton.performClick(nil)
                 self.emailIdInputField.stringValue = ""
                 self.emailBodyInputField.stringValue = ""
