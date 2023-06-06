@@ -2,6 +2,7 @@ import Foundation
 import AppKit
 
 public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource{
+    
     var outlineView : NSOutlineView = {
         let view = NSOutlineView()
         view.wantsLayer = true
@@ -56,9 +57,6 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
                 NSMenu.popUpContextMenu(menu, with: event, for: self)
                 
             }
-            else{
-                print("no")
-            }
         }
 
         public override func updateTrackingAreas() {
@@ -79,7 +77,9 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
     }
     
     public class TaskText : NSTextField{
-        var taskItem : Task.TaskItem?
+        weak var taskItem : Task.TaskItem?
+        weak var taskDataController : TaskDataController?
+        
         convenience init(taskTitle : String, taskItem : Task.TaskItem) {
             let attributedString = NSAttributedString(string: taskTitle)
             self.init(labelWithAttributedString: attributedString)
@@ -97,6 +97,7 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
                     self.unStrike()
                     self.taskItem!.completed = false
                 }
+//                taskDataController?.put(task: )
             }
         }
         
@@ -162,6 +163,7 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
         else{
             let taskItem = (item as! Task.TaskItem)
             let taskText = TaskText(taskTitle: taskItem.title, taskItem: taskItem)
+            taskText.taskDataController = taskDataController
             if taskItem.completed{
                 taskText.isCompleted = true
             }

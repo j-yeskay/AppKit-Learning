@@ -16,6 +16,7 @@ public class Task : Codable{
     var tasks : [TaskItem]
     
     public class TaskItem : Codable{
+//        weak var task : Task?
         var title : String
         var completed : Bool
     }

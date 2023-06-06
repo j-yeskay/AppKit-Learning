@@ -56,6 +56,26 @@ public class TaskDataController{
 //
 //    }
     
+    func put(task : Task){
+        let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/tasks/\(String(describing: task.id))")!
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        
+        urlRequest.httpBody = self.encode(task: task)
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let dispatchGroup = DispatchGroup()
+        
+        dispatchGroup.enter()
+        self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
+                print("put done")
+            dispatchGroup.leave()
+        }).resume()
+        dispatchGroup.wait()
+        
+        
+    }
+    
 //    func delete(emailObjectId : String){
 //        let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails/\(emailObjectId)")!
 //
@@ -87,18 +107,17 @@ public class TaskDataController{
         }
     }
     
-//
-//    func encode(task : Task) -> Data?{
-//        let jsonEncoder = JSONEncoder()
-//
-//        do{
-//            let jsonData = try jsonEncoder.encode(email)
-//            return jsonData
-//        }
-//        catch{
-//            print(error.localizedDescription)
-//        }
-//        return nil
-//    }
+    func encode(task : Task) -> Data?{
+        let jsonEncoder = JSONEncoder()
+
+        do{
+            let jsonData = try jsonEncoder.encode(task)
+            return jsonData
+        }
+        catch{
+            print(error.localizedDescription)
+        }
+        return nil
+    }
 }
 
