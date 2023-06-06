@@ -4,10 +4,8 @@ import AppKit
 public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineViewDataSource{
     var outlineView : NSOutlineView = {
         let view = NSOutlineView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
         view.wantsLayer = true
         view.addTableColumn(NSTableColumn())
-//        view.style = .fullWidth
         view.intercellSpacing = NSSize(width: 0, height: 10)
         view.selectionHighlightStyle = .none
         return view
@@ -35,6 +33,7 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
             else{
                 taskText.isCompleted = true
             }
+            
         }
         
         public override func rightMouseDown(with event: NSEvent) {
@@ -80,10 +79,11 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
     }
     
     public class TaskText : NSTextField{
-        
-        convenience init(taskTitle : String) {
+        var taskItem : Task.TaskItem?
+        convenience init(taskTitle : String, taskItem : Task.TaskItem) {
             let attributedString = NSAttributedString(string: taskTitle)
             self.init(labelWithAttributedString: attributedString)
+            self.taskItem = taskItem
             self.wantsLayer = true
         }
         
@@ -91,9 +91,11 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
             didSet{
                 if isCompleted!{
                     self.strike()
+                    self.taskItem!.completed = true
                 }
                 else{
                     self.unStrike()
+                    self.taskItem!.completed = false
                 }
             }
         }
@@ -159,7 +161,7 @@ public class OutlineViewManager : NSObject, NSOutlineViewDelegate, NSOutlineView
         }
         else{
             let taskItem = (item as! Task.TaskItem)
-            let taskText = TaskText(taskTitle: taskItem.title)
+            let taskText = TaskText(taskTitle: taskItem.title, taskItem: taskItem)
             if taskItem.completed{
                 taskText.isCompleted = true
             }

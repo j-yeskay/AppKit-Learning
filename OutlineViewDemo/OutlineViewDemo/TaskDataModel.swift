@@ -9,13 +9,13 @@ import Foundation
 import AppKit
 
 
-public struct Task : Codable{
+public class Task : Codable{
     var id :  String?
     var taskGroupName : String
     
     var tasks : [TaskItem]
     
-    public struct TaskItem : Codable{
+    public class TaskItem : Codable{
         var title : String
         var completed : Bool
     }
