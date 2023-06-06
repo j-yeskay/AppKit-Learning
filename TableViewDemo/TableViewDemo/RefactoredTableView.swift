@@ -274,8 +274,13 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
     
     
     public func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-
-        let view = TableRowView()
+        let identifier = NSUserInterfaceItemIdentifier(rawValue: "rowview")
+        var view = tableView.makeView(withIdentifier: identifier, owner: self) as? TableRowView
+        
+        if view == nil{
+            view = TableRowView()
+            view?.identifier = identifier
+        }
 //        let lastRow = self.emailsFromNetworkCall.count - 1
 //        if row == lastRow{
 //            print(row)

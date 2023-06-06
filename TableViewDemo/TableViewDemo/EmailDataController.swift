@@ -14,7 +14,7 @@ public class EmailDataController{
     let urlSession = URLSession(configuration: .default)
     var emails : [Email] = []
     var postResponse : Email?
-    var pageNo : Int = 1
+//    var pageNo : Int = 1
     
     func get(){
 //        print("called")
@@ -24,8 +24,8 @@ public class EmailDataController{
         
         dispatchGroup.enter()
         self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
-            self.emails = self.emails + self.decode(data: data!)!
-            self.pageNo = self.pageNo + 1
+            self.emails = self.decode(data: data!)!
+//            self.pageNo = self.pageNo + 1
                     dispatchGroup.leave()
                 }).resume()
         dispatchGroup.wait()

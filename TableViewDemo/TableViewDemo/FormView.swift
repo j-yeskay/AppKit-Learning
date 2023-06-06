@@ -77,9 +77,9 @@ public class FormView : NSView{
             
             self.emailDataController?.post(emailData: dict)
             let postResponseEmail = self.emailDataController?.postResponse!
-            self.tableViewManager?.tableView.insertRows(at: IndexSet(integer: 0), withAnimation: .slideRight)
             self.tableViewManager?.emailsFromNetworkCall.insert(Email(id: postResponseEmail!.id, emailId: postResponseEmail!.emailId, subject: postResponseEmail!.subject, body: postResponseEmail!.body), at: 0)
-//
+            self.tableViewManager?.tableView.insertRows(at: IndexSet(integer: 0), withAnimation: .slideRight)
+//            print(self.tableViewManager?.emailsFromNetworkCall)
             DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(200), execute: {
                 self.tableViewManager?.tableView.reloadData()
                 EmailDetailView.getEmailDetailViewInstance().closeButton.performClick(nil)
