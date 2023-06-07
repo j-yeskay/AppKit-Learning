@@ -14,22 +14,28 @@ public class EmailDataController{
     let urlSession = URLSession(configuration: .default)
     var emails : [Email] = []
     var postResponse : Email?
-//    var pageNo : Int = 1
+    var pageNo : Int = 1
+    weak var tableViewManager : TableViewManager!
     
     func get(){
 //        print("called")
-        let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails")!
-        let urlRequest = URLRequest(url: url)
-        let dispatchGroup = DispatchGroup()
-        
+//        if pageNo <= 5{
+            let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails/")!
+//        let url = URL(string: "http://localhost:3000/emails")!
+            let urlRequest = URLRequest(url: url)
+            let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-        self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
-            self.emails = self.decode(data: data!)!
-//            self.pageNo = self.pageNo + 1
+                self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
+                    self.emails = self.emails + self.decode(data: data!)!
+                    self.tableViewManager.emailsFromNetworkCall = self.emails
+//                    self.pageNo = self.pageNo + 1
                     dispatchGroup.leave()
+                    
                 }).resume()
         dispatchGroup.wait()
-    }
+            self.tableViewManager.tableView.reloadData()
+
+        }
     
     func post(emailData : [String : String]){
         let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails")!

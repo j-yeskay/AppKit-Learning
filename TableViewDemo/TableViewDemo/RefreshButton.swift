@@ -25,8 +25,8 @@ public class RefreshButton : NSButton{
     @objc public func buttonClick(){
         self.emailDataController?.get()
         (self.tableViewManager!.tableView.dataSource as! TableViewManager).emailsFromNetworkCall = self.emailDataController!.emails
-        print(self.emailDataController!.emails)
-        print(self.tableViewManager?.emailsFromNetworkCall)
+//        print(self.emailDataController!.emails)
+//        print(self.tableViewManager?.emailsFromNetworkCall)
         self.tableViewManager?.tableView.reloadData()
 
     }

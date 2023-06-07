@@ -30,8 +30,10 @@ public class TableViewController : NSViewController{
         tableViewManager.tableView.dataSource = tableViewManager
         
         scrollView.documentView = tableViewManager.tableView
-        emailDataController = EmailDataController()
         
+        emailDataController = EmailDataController()
+        scrollView.emailDataController = emailDataController
+        scrollView.tableViewManager = tableViewManager
         formView = FormView()
         
         formView.tableViewManager = tableViewManager
@@ -49,6 +51,8 @@ public class TableViewController : NSViewController{
         
         emailDetailView = EmailDetailView.getEmailDetailViewInstance()
         emailDetailView.tableViewManager = tableViewManager
+        
+        emailDataController.tableViewManager = tableViewManager
 
     }
     
@@ -59,11 +63,11 @@ public class TableViewController : NSViewController{
         view.addSubview(emailDetailView)
         
         emailDataController.get()
-        (self.tableViewManager.tableView.dataSource as! TableViewManager).emailsFromNetworkCall = emailDataController.emails
+//        (self.tableViewManager.tableView.dataSource as! TableViewManager).emailsFromNetworkCall = emailDataController.emails
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50), execute: {
-            self.tableViewManager.tableView.reloadData()
-        })
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50), execute: {
+//            self.tableViewManager.tableView.reloadData()
+//        })
         
         
         NSLayoutConstraint.activate([
@@ -87,4 +91,5 @@ public class TableViewController : NSViewController{
             emailDetailView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
         ])
     }
+    
 }

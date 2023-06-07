@@ -29,24 +29,46 @@ public class TableViewManager : NSObject, NSTableViewDelegate, NSTableViewDataSo
         }
         public override func reloadData() {
             super.reloadData()
-            print("called")
+//            print("called")
         }
     }
     
     
     public class ScrollView : NSScrollView{
+        weak var emailDataController : EmailDataController?
+        weak var tableViewManager : TableViewManager?
         convenience init() {
             self.init(frame: NSRect())
             self.translatesAutoresizingMaskIntoConstraints = false
-            
+            self.verticalScrollElasticity = .allowed
             self.hasVerticalScroller = true
 
         }
         
         public override func scrollWheel(with event: NSEvent) {
             super.scrollWheel(with: event)
-            
+            let contentView = (self.contentView.bounds.origin.y + self.contentView.bounds.height)
+            let documentView = self.documentView!.bounds.height
+            print("scroll view = \(self.bounds)")
+            print("clip view = \(self.contentView.bounds)")
+            print("document view = \(self.documentView!.bounds)")
+//            print(self.contentView.bounds.origin)
+//            print(self.contentView.bounds.origin.y)
+
+//            print(contentView)
+//            print(documentView)
+//            if (contentView - documentView) > -300{
+//            print(contentView)
+//            print(documentView)
+            if contentView == documentView{
+                print("gonna call")
+                emailDataController?.get()
+                print("called")
+            }
+
+
         }
+        
     }
     
     public class EmailView : NSView{
