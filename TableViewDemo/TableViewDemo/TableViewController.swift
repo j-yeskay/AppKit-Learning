@@ -7,6 +7,7 @@
 
 import Foundation
 import AppKit
+import Network
 
 
 
@@ -53,6 +54,8 @@ public class TableViewController : NSViewController{
         emailDetailView.tableViewManager = tableViewManager
         
         emailDataController.tableViewManager = tableViewManager
+        
+        EmailDBController.getEmailDBControllerInstance().tableViewManager = tableViewManager
 
     }
     
@@ -68,7 +71,7 @@ public class TableViewController : NSViewController{
 //        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(50), execute: {
 //            self.tableViewManager.tableView.reloadData()
 //        })
-        
+           
         
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),

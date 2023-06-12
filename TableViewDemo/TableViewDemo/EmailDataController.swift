@@ -7,6 +7,7 @@
 
 import Foundation
 import AppKit
+import Network
 
 
 public class EmailDataController{
@@ -17,25 +18,37 @@ public class EmailDataController{
     var pageNo : Int = 1
     weak var tableViewManager : TableViewManager!
     
+    
     func get(){
-//        print("called")
-//        if pageNo <= 5{
-            let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails/")!
-//        let url = URL(string: "http://localhost:3000/emails")!
-            let urlRequest = URLRequest(url: url)
-            let dispatchGroup = DispatchGroup()
+
+        let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails/")!
+        let urlRequest = URLRequest(url: url)
+        let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
-                self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
-                    self.emails = self.emails + self.decode(data: data!)!
-                    self.tableViewManager.emailsFromNetworkCall = self.emails
-//                    self.pageNo = self.pageNo + 1
+        
+        self.urlSession.dataTask(with: urlRequest, completionHandler: {data, response, error in
+                    if response != nil{
+                        self.emails = self.emails + self.decode(data: data!)
+                        self.tableViewManager.emailsFromNetworkCall = self.emails
+                        EmailDBController.getEmailDBControllerInstance().emails = self.emails
+                        EmailDBController.getEmailDBControllerInstance().updateDBFromNetwork()
+                        
+                    }
+                    else{
+                        let databaseController = EmailDBController.getEmailDBControllerInstance()
+                        databaseController.loadEmailsFromDB()
+                    }
+                    
                     dispatchGroup.leave()
                     
                 }).resume()
-        dispatchGroup.wait()
-            self.tableViewManager.tableView.reloadData()
+            
 
-        }
+        dispatchGroup.wait()
+        
+        self.tableViewManager.tableView.reloadData()
+
+    }
     
     func post(emailData : [String : String]){
         let url = URL(string: "https://646f118b09ff19b12086831f.mockapi.io/emails")!
@@ -78,7 +91,7 @@ public class EmailDataController{
         dispatchGroup.wait()
     }
     
-    func decode(data : Data) -> [Email]?{
+    func decode(data : Data) -> [Email]{
         let jsonDecoder = JSONDecoder()
         
         do{
@@ -87,7 +100,7 @@ public class EmailDataController{
         }
         catch{
             print(error.localizedDescription)
-            return nil
+            return []
         }
     }
     

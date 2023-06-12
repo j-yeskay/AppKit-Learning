@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B02CE742A31DA7A006A8440 /* EmailDBController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02CE732A31DA7A006A8440 /* EmailDBController.swift */; };
 		2B246D372A1CC0EA00E52B2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B246D362A1CC0EA00E52B2B /* AppDelegate.swift */; };
 		2B246D392A1CC0EA00E52B2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B246D382A1CC0EA00E52B2B /* Assets.xcassets */; };
 		2B246D3C2A1CC0EA00E52B2B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B246D3A2A1CC0EA00E52B2B /* MainMenu.xib */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B02CE732A31DA7A006A8440 /* EmailDBController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailDBController.swift; sourceTree = "<group>"; };
 		2B246D332A1CC0EA00E52B2B /* TableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B246D362A1CC0EA00E52B2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B246D382A1CC0EA00E52B2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				2BD671E62A2464E800697AA5 /* RefreshButton.swift */,
 				2BD671E82A24919B00697AA5 /* DeleteButton.swift */,
 				2BD671EC2A25E65000697AA5 /* EmailDetailView.swift */,
+				2B02CE732A31DA7A006A8440 /* EmailDBController.swift */,
 			);
 			path = TableViewDemo;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				2BD671ED2A25E65000697AA5 /* EmailDetailView.swift in Sources */,
 				2B246D372A1CC0EA00E52B2B /* AppDelegate.swift in Sources */,
 				2BD671E92A24919B00697AA5 /* DeleteButton.swift in Sources */,
+				2B02CE742A31DA7A006A8440 /* EmailDBController.swift in Sources */,
 				2BD671E12A1F847700697AA5 /* RefactoredTableView.swift in Sources */,
 				2BD671DD2A1F614C00697AA5 /* EmailDataModel.swift in Sources */,
 				2BD671CF2A1E1FE400697AA5 /* TableViewController.swift in Sources */,
