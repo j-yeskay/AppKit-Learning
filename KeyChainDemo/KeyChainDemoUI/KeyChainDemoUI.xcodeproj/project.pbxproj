@@ -20,6 +20,10 @@
 		2B8F7A422A3853EB003D7262 /* CreateUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F7A412A3853EB003D7262 /* CreateUserView.swift */; };
 		2B8F7A442A385608003D7262 /* CreateUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F7A432A385608003D7262 /* CreateUserPresenter.swift */; };
 		2B8F7A462A387129003D7262 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F7A452A387129003D7262 /* LoginView.swift */; };
+		2BC430B02A39B2B0003C7171 /* LoginRouterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430AF2A39B2B0003C7171 /* LoginRouterContract.swift */; };
+		2BC430B22A39B2C1003C7171 /* LoginViewContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430B12A39B2C1003C7171 /* LoginViewContract.swift */; };
+		2BC430B42A39B2D5003C7171 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430B32A39B2D5003C7171 /* LoginPresenter.swift */; };
+		2BC430B62A39B33D003C7171 /* LoginPresenterContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430B52A39B33D003C7171 /* LoginPresenterContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +55,10 @@
 		2B8F7A412A3853EB003D7262 /* CreateUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserView.swift; sourceTree = "<group>"; };
 		2B8F7A432A385608003D7262 /* CreateUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserPresenter.swift; sourceTree = "<group>"; };
 		2B8F7A452A387129003D7262 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2BC430AF2A39B2B0003C7171 /* LoginRouterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterContract.swift; sourceTree = "<group>"; };
+		2BC430B12A39B2C1003C7171 /* LoginViewContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewContract.swift; sourceTree = "<group>"; };
+		2BC430B32A39B2D5003C7171 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		2BC430B52A39B33D003C7171 /* LoginPresenterContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +128,9 @@
 				2B8F7A3B2A3852D0003D7262 /* CreateUserViewContract.swift */,
 				2B8F7A3D2A3852FE003D7262 /* CreateUserPresenterContract.swift */,
 				2B8F7A3F2A385332003D7262 /* CreateUserRouterContract.swift */,
+				2BC430AF2A39B2B0003C7171 /* LoginRouterContract.swift */,
+				2BC430B12A39B2C1003C7171 /* LoginViewContract.swift */,
+				2BC430B52A39B33D003C7171 /* LoginPresenterContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -127,6 +138,7 @@
 		2B8F7A392A385188003D7262 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				2BC430B32A39B2D5003C7171 /* LoginPresenter.swift */,
 				2B8F7A432A385608003D7262 /* CreateUserPresenter.swift */,
 			);
 			path = Presenter;
@@ -212,12 +224,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BC430B42A39B2D5003C7171 /* LoginPresenter.swift in Sources */,
+				2BC430B62A39B33D003C7171 /* LoginPresenterContract.swift in Sources */,
 				2B8F7A322A3850CA003D7262 /* Router.swift in Sources */,
 				2B8F7A422A3853EB003D7262 /* CreateUserView.swift in Sources */,
 				2B8F7A3E2A3852FE003D7262 /* CreateUserPresenterContract.swift in Sources */,
 				2B8F7A462A387129003D7262 /* LoginView.swift in Sources */,
 				2B8F7A342A3850D3003D7262 /* Assembler.swift in Sources */,
+				2BC430B02A39B2B0003C7171 /* LoginRouterContract.swift in Sources */,
 				2B8F7A202A38500D003D7262 /* AppDelegate.swift in Sources */,
+				2BC430B22A39B2C1003C7171 /* LoginViewContract.swift in Sources */,
 				2B8F7A3C2A3852D0003D7262 /* CreateUserViewContract.swift in Sources */,
 				2B8F7A402A385332003D7262 /* CreateUserRouterContract.swift in Sources */,
 				2B8F7A442A385608003D7262 /* CreateUserPresenter.swift in Sources */,

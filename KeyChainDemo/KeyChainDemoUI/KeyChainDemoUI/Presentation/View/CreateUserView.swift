@@ -67,13 +67,32 @@ public class CreateUserView : NSView{
         return button
     }()
     
+    var alert : NSAlert = {
+        let view = NSAlert()
+        view.messageText = "User Already Exists!"
+        view.icon = NSImage(systemSymbolName: "exclamationmark.brakesignal", accessibilityDescription: nil)
+        return view
+    }()
+    
     @objc func signUpButtonClick(){
-        let emailId = self.emailField.stringValue
+        let email = self.emailField.stringValue
         let password = self.passwordField.stringValue
         
-        self.presenter.signUp(userData: ["email" : emailId, "password" : password])
+        self.presenter.signUp(userData: ["email" : email, "password" : password])
     }
     
+    var goToLoginButton : NSButton = {
+        let button = NSButton()
+        button.title = "Go to Login Page"
+        button.wantsLayer = true
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    @objc func goToLoginButtonClick(){
+        self.presenter.getRouter().launchLoginView(email: nil)
+    }
+
 }
 
 extension CreateUserView : CreateUserViewContract{
@@ -84,7 +103,20 @@ extension CreateUserView : CreateUserViewContract{
         self.addSubview(self.passwordField)
         self.addSubview(self.signUpTitle)
         self.addSubview(self.signUpButton)
+        self.addSubview(self.goToLoginButton)
+        
+        goToLoginButton.target = self
+        goToLoginButton.action = #selector(goToLoginButtonClick)
         self.activateConstraints()
+    }
+    
+    public func showAlert(){
+        self.alert.runModal()
+    }
+    
+    public func emptyFields(){
+        self.emailField.stringValue = ""
+        self.passwordField.stringValue = ""
     }
     
     func activateConstraints(){
@@ -109,10 +141,16 @@ extension CreateUserView : CreateUserViewContract{
             self.passwordField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -40),
             self.passwordField.heightAnchor.constraint(equalToConstant: 26),
             
-            self.signUpButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            self.signUpButton.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 200),
             self.signUpButton.heightAnchor.constraint(equalToConstant: 50),
             self.signUpButton.widthAnchor.constraint(equalToConstant: 70),
-            self.signUpButton.topAnchor.constraint(equalTo: self.passwordField.bottomAnchor, constant: 100)
+            self.signUpButton.topAnchor.constraint(equalTo: self.passwordField.bottomAnchor, constant: 100),
+            
+            self.goToLoginButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -200),
+            self.goToLoginButton.heightAnchor.constraint(equalToConstant: 50),
+            self.goToLoginButton.widthAnchor.constraint(equalToConstant: 110),
+            self.goToLoginButton.topAnchor.constraint(equalTo: self.passwordField.bottomAnchor, constant: 100)
+
             
         ])
     }

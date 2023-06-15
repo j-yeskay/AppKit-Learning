@@ -10,10 +10,10 @@ import KeyChainDemoBackend
 
 public class CreateUserPresenter{
     var view : CreateUserViewContract?
-    var router : CreateUserRouterContract
+    var router : LoginRouterContract & CreateUserRouterContract
     var usecase : CreateUserUsecase
     
-    public init(router: CreateUserRouterContract, usecase : CreateUserUsecase) {
+    public init(router: LoginRouterContract & CreateUserRouterContract, usecase : CreateUserUsecase) {
         self.router = router
         self.usecase = usecase
     }
@@ -21,6 +21,10 @@ public class CreateUserPresenter{
 
 
 extension CreateUserPresenter : CreateUserPresenterContract{
+    public func getRouter() -> CreateUserRouterContract & LoginRouterContract {
+        return self.router
+    }
+    
     public func viewLoaded() {
         self.view!.load()
     }
@@ -37,8 +41,13 @@ extension CreateUserPresenter : CreateUserPresenterContract{
     
     public func result(user : User){
         print("Account Created For : \(user.email)")
+        self.router.launchLoginView(email : user.email)
     }
     public func failure(error : CreateUserUsecaseError){
-        print("fail : \(error.error)")
+        self.view?.emptyFields()
+        if error.error == .alreadyExists{
+            self.view?.showAlert()
+        }
+        
     }
 }

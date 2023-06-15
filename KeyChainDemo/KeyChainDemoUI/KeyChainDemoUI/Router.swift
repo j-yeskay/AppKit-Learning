@@ -24,3 +24,10 @@ extension Router : CreateUserRouterContract{
         self.window.contentView = Assembler.getCreateUserView(router : self)
     }
 }
+
+
+extension Router : LoginRouterContract{
+    public func launchLoginView(email : String? = nil) {
+        self.window.contentView = Assembler.getLoginView(router : self, email : email)
+    }
+}

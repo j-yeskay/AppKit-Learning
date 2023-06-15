@@ -15,6 +15,10 @@
 		2B8F7A0D2A38465A003D7262 /* CreateUserDataManagerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F7A0C2A38465A003D7262 /* CreateUserDataManagerContract.swift */; };
 		2B8F7A102A384875003D7262 /* BaseUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F7A0F2A384875003D7262 /* BaseUsecase.swift */; };
 		2B8F7A122A3848C4003D7262 /* CreateUserUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F7A112A3848C4003D7262 /* CreateUserUsecase.swift */; };
+		2BC430A62A3989F1003C7171 /* GetUserNetworkContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430A52A3989F1003C7171 /* GetUserNetworkContract.swift */; };
+		2BC430AA2A399BEF003C7171 /* LoginUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430A92A399BEF003C7171 /* LoginUsecase.swift */; };
+		2BC430AC2A399DBA003C7171 /* LoginDataManagerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430AB2A399DBA003C7171 /* LoginDataManagerContract.swift */; };
+		2BC430AE2A399F28003C7171 /* LoginNetworkContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC430AD2A399F28003C7171 /* LoginNetworkContract.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		2B8F7A0C2A38465A003D7262 /* CreateUserDataManagerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserDataManagerContract.swift; sourceTree = "<group>"; };
 		2B8F7A0F2A384875003D7262 /* BaseUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUsecase.swift; sourceTree = "<group>"; };
 		2B8F7A112A3848C4003D7262 /* CreateUserUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserUsecase.swift; sourceTree = "<group>"; };
+		2BC430A52A3989F1003C7171 /* GetUserNetworkContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserNetworkContract.swift; sourceTree = "<group>"; };
+		2BC430A92A399BEF003C7171 /* LoginUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUsecase.swift; sourceTree = "<group>"; };
+		2BC430AB2A399DBA003C7171 /* LoginDataManagerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataManagerContract.swift; sourceTree = "<group>"; };
+		2BC430AD2A399F28003C7171 /* LoginNetworkContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNetworkContract.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,8 @@
 			isa = PBXGroup;
 			children = (
 				2B8F7A012A384128003D7262 /* CreateUserNetworkContract.swift */,
+				2BC430A52A3989F1003C7171 /* GetUserNetworkContract.swift */,
+				2BC430AD2A399F28003C7171 /* LoginNetworkContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -122,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				2B8F7A0C2A38465A003D7262 /* CreateUserDataManagerContract.swift */,
+				2BC430AB2A399DBA003C7171 /* LoginDataManagerContract.swift */,
 			);
 			path = Contract;
 			sourceTree = "<group>";
@@ -130,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				2B8F7A0F2A384875003D7262 /* BaseUsecase.swift */,
+				2BC430A92A399BEF003C7171 /* LoginUsecase.swift */,
 				2B8F7A112A3848C4003D7262 /* CreateUserUsecase.swift */,
 			);
 			path = Usecase;
@@ -216,11 +228,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B8F7A122A3848C4003D7262 /* CreateUserUsecase.swift in Sources */,
+				2BC430AC2A399DBA003C7171 /* LoginDataManagerContract.swift in Sources */,
+				2BC430AA2A399BEF003C7171 /* LoginUsecase.swift in Sources */,
 				2B8F7A0D2A38465A003D7262 /* CreateUserDataManagerContract.swift in Sources */,
 				2B8F7A0A2A38462C003D7262 /* UserDataManager.swift in Sources */,
 				2B8F7A102A384875003D7262 /* BaseUsecase.swift in Sources */,
 				2B8F7A062A38430F003D7262 /* UserModel.swift in Sources */,
 				2B8F7A082A384347003D7262 /* NetworkService.swift in Sources */,
+				2BC430AE2A399F28003C7171 /* LoginNetworkContract.swift in Sources */,
+				2BC430A62A3989F1003C7171 /* GetUserNetworkContract.swift in Sources */,
 				2B8F7A022A384128003D7262 /* CreateUserNetworkContract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

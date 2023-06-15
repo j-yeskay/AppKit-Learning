@@ -9,9 +9,9 @@ import Foundation
 
 
 public class UserDataManager{
-    var network : CreateUserNetworkContract
+    var network : CreateUserNetworkContract & LoginNetworkContract
     
-    public init(network : CreateUserNetworkContract) {
+    public init(network : CreateUserNetworkContract & LoginNetworkContract) {
         self.network = network
     }
 }
@@ -19,6 +19,13 @@ public class UserDataManager{
 
 extension UserDataManager : CreateUserDataManagerContract{
     public func createUser(userData: [String : String], success: @escaping ((User) -> Void), failure: @escaping ((String) -> Void)) {
-        network.createUser(userData: userData, success: success, failure: failure)
+        self.network.createUser(userData: userData, success: success, failure: failure)
+    }
+}
+
+
+extension UserDataManager : LoginDataManagerContract{
+    public func login(userData: [String : String], success: @escaping ((User) -> Void), failure: @escaping ((String) -> Void)) {
+        self.network.login(userData: userData, success: success, failure: failure)
     }
 }

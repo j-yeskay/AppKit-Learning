@@ -10,4 +10,6 @@ import Foundation
 
 public protocol CreateUserViewContract{
     func load()
+    func showAlert()
+    func emptyFields()
 }

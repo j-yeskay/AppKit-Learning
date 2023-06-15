@@ -11,4 +11,6 @@ public protocol CreateUserPresenterContract{
     func viewLoaded()
     
     func signUp(userData : [String : String])
+    
+    func getRouter() -> CreateUserRouterContract & LoginRouterContract
 }

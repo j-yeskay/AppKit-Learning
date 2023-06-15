@@ -6,6 +6,7 @@
 //
 
 import Cocoa
+import KeyChainDemoBackend
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -14,6 +15,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let router = Router()
         router.launchCreateUserView()
+        
+//        let network = NetworkService()
+//        network.createUser(userData: ["email" : "tester@test.com", "password" : "test"], success: {user in
+//            print(user)
+//        }, failure: {error in
+//            print(error)
+//        })
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

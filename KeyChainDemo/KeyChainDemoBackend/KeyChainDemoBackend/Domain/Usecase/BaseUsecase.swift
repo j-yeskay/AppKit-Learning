@@ -31,12 +31,17 @@ open class BaseUsecaseResponse{
 }
 
 open class BaseUsecaseError{
+    
     public var error : ErrorType
     
-    public enum ErrorType{
+    public enum ErrorType : Equatable{
         case networkError(String)
-        case unknownError
+        case unknownError(String)
+        case doesNotExist
+        case alreadyExists
+        case wrongPassword
     }
+    
     
     public init(error: ErrorType) {
         self.error = error

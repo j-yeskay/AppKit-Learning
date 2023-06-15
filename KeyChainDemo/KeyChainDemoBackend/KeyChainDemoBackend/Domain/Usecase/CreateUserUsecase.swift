@@ -46,17 +46,25 @@ public class CreateUserUsecase : BaseUsecase<CreateUserUsecaseRequest, CreateUse
     }
     
     
-// MARK :- Convert User to Response Object and callback to Main Thread
+// MARK: - Convert User to Response Object and callback to Main Thread
     
     private func success(user : User, callback : @escaping ((CreateUserUsecaseResponse) -> Void)){
         let response = CreateUserUsecaseResponse(user: user, status: .success)
         invokeSuccess(callback: callback, response: response)
     }
     
-// MARK :- Convert Error String to Error Object and callback to Main Thread
+// MARK: - Convert Error String to Error Object and callback to Main Thread
     
     private func failure(error : String, callback : @escaping ((CreateUserUsecaseError) -> Void)){
-        let error = CreateUserUsecaseError(error: .networkError(error))
-        invokeFailure(callback: callback, error: error)
+        var useCaseError : CreateUserUsecaseError?
+        
+        if error == "User Already Exists"{
+            useCaseError = .init(error: .alreadyExists)
+        }
+        else{
+            useCaseError = .init(error: .unknownError(error))
+        }
+        
+        invokeFailure(callback: callback, error: useCaseError!)
     }
 }
