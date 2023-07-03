@@ -7,31 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B02CE5F2A3065ED006A8440 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B02CE5E2A3065ED006A8440 /* Assets.xcassets */; };
-		2B02CE622A3065ED006A8440 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B02CE602A3065ED006A8440 /* MainMenu.xib */; };
-		2B02CE6C2A306630006A8440 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02CE692A306630006A8440 /* WindowController.swift */; };
-		2B02CE6D2A306630006A8440 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02CE6A2A306630006A8440 /* ViewController.swift */; };
-		2B02CE6E2A306630006A8440 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02CE6B2A306630006A8440 /* AppDelegate.swift */; };
-		2B02CE722A30838A006A8440 /* CollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B02CE712A30838A006A8440 /* CollectionViewManager.swift */; };
-		2B150AE02A52BCA9005B4B28 /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B150ADF2A52BCA9005B4B28 /* CalendarController.swift */; };
-		2BB357542A51DF3800353191 /* MyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB357532A51DF3800353191 /* MyItem.swift */; };
+		2B1AE64C2A3B0A7B0069EBED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1AE64B2A3B0A7B0069EBED /* AppDelegate.swift */; };
+		2B1AE64E2A3B0A7C0069EBED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B1AE64D2A3B0A7C0069EBED /* Assets.xcassets */; };
+		2B1AE6512A3B0A7C0069EBED /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B1AE64F2A3B0A7C0069EBED /* MainMenu.xib */; };
+		2B1AE6592A3B0AFF0069EBED /* SplitViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1AE6582A3B0AFF0069EBED /* SplitViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B02CE592A3065EC006A8440 /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B02CE5E2A3065ED006A8440 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2B02CE612A3065ED006A8440 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		2B02CE632A3065ED006A8440 /* Calendar.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Calendar.entitlements; sourceTree = "<group>"; };
-		2B02CE692A306630006A8440 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WindowController.swift; path = ../../Animations/Animations/WindowController.swift; sourceTree = "<group>"; };
-		2B02CE6A2A306630006A8440 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../Animations/Animations/ViewController.swift; sourceTree = "<group>"; };
-		2B02CE6B2A306630006A8440 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../Animations/Animations/AppDelegate.swift; sourceTree = "<group>"; };
-		2B02CE712A30838A006A8440 /* CollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewManager.swift; sourceTree = "<group>"; };
-		2B150ADF2A52BCA9005B4B28 /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
-		2BB357532A51DF3800353191 /* MyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyItem.swift; sourceTree = "<group>"; };
+		2B1AE6482A3B0A7B0069EBED /* SplitViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B1AE64B2A3B0A7B0069EBED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2B1AE64D2A3B0A7C0069EBED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B1AE6502A3B0A7C0069EBED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2B1AE6522A3B0A7C0069EBED /* SplitViewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SplitViewDemo.entitlements; sourceTree = "<group>"; };
+		2B1AE6582A3B0AFF0069EBED /* SplitViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2B02CE562A3065EC006A8440 /* Frameworks */ = {
+		2B1AE6452A3B0A7B0069EBED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,74 +33,70 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B02CE502A3065EC006A8440 = {
+		2B1AE63F2A3B0A7B0069EBED = {
 			isa = PBXGroup;
 			children = (
-				2B02CE5B2A3065EC006A8440 /* Calendar */,
-				2B02CE5A2A3065EC006A8440 /* Products */,
+				2B1AE64A2A3B0A7B0069EBED /* SplitViewDemo */,
+				2B1AE6492A3B0A7B0069EBED /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		2B02CE5A2A3065EC006A8440 /* Products */ = {
+		2B1AE6492A3B0A7B0069EBED /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B02CE592A3065EC006A8440 /* Calendar.app */,
+				2B1AE6482A3B0A7B0069EBED /* SplitViewDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2B02CE5B2A3065EC006A8440 /* Calendar */ = {
+		2B1AE64A2A3B0A7B0069EBED /* SplitViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				2B02CE6B2A306630006A8440 /* AppDelegate.swift */,
-				2B02CE712A30838A006A8440 /* CollectionViewManager.swift */,
-				2B02CE6A2A306630006A8440 /* ViewController.swift */,
-				2B02CE692A306630006A8440 /* WindowController.swift */,
-				2B02CE5E2A3065ED006A8440 /* Assets.xcassets */,
-				2B02CE602A3065ED006A8440 /* MainMenu.xib */,
-				2B02CE632A3065ED006A8440 /* Calendar.entitlements */,
-				2BB357532A51DF3800353191 /* MyItem.swift */,
-				2B150ADF2A52BCA9005B4B28 /* CalendarController.swift */,
+				2B1AE64B2A3B0A7B0069EBED /* AppDelegate.swift */,
+				2B1AE64D2A3B0A7C0069EBED /* Assets.xcassets */,
+				2B1AE64F2A3B0A7C0069EBED /* MainMenu.xib */,
+				2B1AE6522A3B0A7C0069EBED /* SplitViewDemo.entitlements */,
+				2B1AE6582A3B0AFF0069EBED /* SplitViewManager.swift */,
 			);
-			path = Calendar;
+			path = SplitViewDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B02CE582A3065EC006A8440 /* Calendar */ = {
+		2B1AE6472A3B0A7B0069EBED /* SplitViewDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B02CE662A3065ED006A8440 /* Build configuration list for PBXNativeTarget "Calendar" */;
+			buildConfigurationList = 2B1AE6552A3B0A7C0069EBED /* Build configuration list for PBXNativeTarget "SplitViewDemo" */;
 			buildPhases = (
-				2B02CE552A3065EC006A8440 /* Sources */,
-				2B02CE562A3065EC006A8440 /* Frameworks */,
-				2B02CE572A3065EC006A8440 /* Resources */,
+				2B1AE6442A3B0A7B0069EBED /* Sources */,
+				2B1AE6452A3B0A7B0069EBED /* Frameworks */,
+				2B1AE6462A3B0A7B0069EBED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Calendar;
-			productName = Calendar;
-			productReference = 2B02CE592A3065EC006A8440 /* Calendar.app */;
+			name = SplitViewDemo;
+			productName = SplitViewDemo;
+			productReference = 2B1AE6482A3B0A7B0069EBED /* SplitViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2B02CE512A3065EC006A8440 /* Project object */ = {
+		2B1AE6402A3B0A7B0069EBED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					2B02CE582A3065EC006A8440 = {
+					2B1AE6472A3B0A7B0069EBED = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
 			};
-			buildConfigurationList = 2B02CE542A3065EC006A8440 /* Build configuration list for PBXProject "Calendar" */;
+			buildConfigurationList = 2B1AE6432A3B0A7B0069EBED /* Build configuration list for PBXProject "SplitViewDemo" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,49 +104,45 @@
 				en,
 				Base,
 			);
-			mainGroup = 2B02CE502A3065EC006A8440;
-			productRefGroup = 2B02CE5A2A3065EC006A8440 /* Products */;
+			mainGroup = 2B1AE63F2A3B0A7B0069EBED;
+			productRefGroup = 2B1AE6492A3B0A7B0069EBED /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B02CE582A3065EC006A8440 /* Calendar */,
+				2B1AE6472A3B0A7B0069EBED /* SplitViewDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2B02CE572A3065EC006A8440 /* Resources */ = {
+		2B1AE6462A3B0A7B0069EBED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B02CE5F2A3065ED006A8440 /* Assets.xcassets in Resources */,
-				2B02CE622A3065ED006A8440 /* MainMenu.xib in Resources */,
+				2B1AE64E2A3B0A7C0069EBED /* Assets.xcassets in Resources */,
+				2B1AE6512A3B0A7C0069EBED /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2B02CE552A3065EC006A8440 /* Sources */ = {
+		2B1AE6442A3B0A7B0069EBED /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B02CE6E2A306630006A8440 /* AppDelegate.swift in Sources */,
-				2B150AE02A52BCA9005B4B28 /* CalendarController.swift in Sources */,
-				2B02CE6D2A306630006A8440 /* ViewController.swift in Sources */,
-				2B02CE6C2A306630006A8440 /* WindowController.swift in Sources */,
-				2BB357542A51DF3800353191 /* MyItem.swift in Sources */,
-				2B02CE722A30838A006A8440 /* CollectionViewManager.swift in Sources */,
+				2B1AE64C2A3B0A7B0069EBED /* AppDelegate.swift in Sources */,
+				2B1AE6592A3B0AFF0069EBED /* SplitViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2B02CE602A3065ED006A8440 /* MainMenu.xib */ = {
+		2B1AE64F2A3B0A7C0069EBED /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2B02CE612A3065ED006A8440 /* Base */,
+				2B1AE6502A3B0A7C0069EBED /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -166,7 +150,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2B02CE642A3065ED006A8440 /* Debug */ = {
+		2B1AE6532A3B0A7C0069EBED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +210,7 @@
 			};
 			name = Debug;
 		};
-		2B02CE652A3065ED006A8440 /* Release */ = {
+		2B1AE6542A3B0A7C0069EBED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -279,12 +263,12 @@
 			};
 			name = Release;
 		};
-		2B02CE672A3065ED006A8440 /* Debug */ = {
+		2B1AE6562A3B0A7C0069EBED /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Calendar/Calendar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SplitViewDemo/SplitViewDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -298,19 +282,19 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Test.Calendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.SplitViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		2B02CE682A3065ED006A8440 /* Release */ = {
+		2B1AE6572A3B0A7C0069EBED /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Calendar/Calendar.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SplitViewDemo/SplitViewDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -324,7 +308,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Test.Calendar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Test.SplitViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -334,25 +318,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B02CE542A3065EC006A8440 /* Build configuration list for PBXProject "Calendar" */ = {
+		2B1AE6432A3B0A7B0069EBED /* Build configuration list for PBXProject "SplitViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B02CE642A3065ED006A8440 /* Debug */,
-				2B02CE652A3065ED006A8440 /* Release */,
+				2B1AE6532A3B0A7C0069EBED /* Debug */,
+				2B1AE6542A3B0A7C0069EBED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B02CE662A3065ED006A8440 /* Build configuration list for PBXNativeTarget "Calendar" */ = {
+		2B1AE6552A3B0A7C0069EBED /* Build configuration list for PBXNativeTarget "SplitViewDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2B02CE672A3065ED006A8440 /* Debug */,
-				2B02CE682A3065ED006A8440 /* Release */,
+				2B1AE6562A3B0A7C0069EBED /* Debug */,
+				2B1AE6572A3B0A7C0069EBED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 2B02CE512A3065EC006A8440 /* Project object */;
+	rootObject = 2B1AE6402A3B0A7B0069EBED /* Project object */;
 }

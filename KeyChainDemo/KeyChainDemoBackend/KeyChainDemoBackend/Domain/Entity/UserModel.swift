@@ -9,9 +9,11 @@ import Foundation
 
 
 public class User{
+    public var id : Int?
     public var email : String
     
-    init(email: String) {
+    init(id: Int? = nil, email: String) {
+        self.id = id
         self.email = email
     }
 }

@@ -14,6 +14,7 @@
 		2B5FF5A32A272A7A008F45D2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5A22A272A7A008F45D2 /* WindowController.swift */; };
 		2B5FF5A72A272B2D008F45D2 /* TableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5A62A272B2D008F45D2 /* TableViewManager.swift */; };
 		2B5FF5A92A272E86008F45D2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5A82A272E86008F45D2 /* DataModel.swift */; };
+		2B689FDB2A3B3F69002A2B51 /* Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B689FDA2A3B3F69002A2B51 /* Slider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2B5FF5A22A272A7A008F45D2 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		2B5FF5A62A272B2D008F45D2 /* TableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewManager.swift; sourceTree = "<group>"; };
 		2B5FF5A82A272E86008F45D2 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		2B689FDA2A3B3F69002A2B51 /* Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				2B5FF5A62A272B2D008F45D2 /* TableViewManager.swift */,
 				2B5FF5A82A272E86008F45D2 /* DataModel.swift */,
 				2B4DDED52A2DE6A3009739ED /* ViewController.swift */,
+				2B689FDA2A3B3F69002A2B51 /* Slider.swift */,
 			);
 			path = TableView2;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				2B5FF5A92A272E86008F45D2 /* DataModel.swift in Sources */,
 				2B5FF5962A272A07008F45D2 /* AppDelegate.swift in Sources */,
 				2B5FF5A32A272A7A008F45D2 /* WindowController.swift in Sources */,
+				2B689FDB2A3B3F69002A2B51 /* Slider.swift in Sources */,
 				2B5FF5A72A272B2D008F45D2 /* TableViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

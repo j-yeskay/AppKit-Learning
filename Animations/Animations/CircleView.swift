@@ -59,6 +59,44 @@ public class CircleView: NSView {
         }
 //        self.viewControllerRef?.addText()
     }
+    
+    public func fadeOut(){
+        let animationDict : [NSViewAnimation.Key : Any] = [.effect : NSViewAnimation.EffectName.fadeOut, .target: self]
+        let animation = NSViewAnimation(viewAnimations: [animationDict])
+        let delegate = AnimationDelegate()
+        delegate.view = self
+        animation.delegate = delegate
+//        animation.duration = 5
+        animation.start()
+//        self.isHidden = true
+    }
+    
+    public func fadeIn(){
+        let animationDict : [NSViewAnimation.Key : Any] = [.effect : NSViewAnimation.EffectName.fadeIn, .target: self]
+        let animation = NSViewAnimation(viewAnimations: [animationDict])
+//        let delegate = AnimationDelegate()
+//        delegate.view = self
+//        animation.delegate = delegate
+//        animation.duration = 5
+        animation.start()
+        self.isHidden = false
+    }
+    
+    
+     class AnimationDelegate : NSObject, NSAnimationDelegate{
+         var view : NSView?
+         func animationDidEnd(_ animation: NSAnimation) {
+             self.view?.isHidden = true
+        }
+    }
+    
+//    class FadeInAnimationDelegate : NSObject, NSAnimationDelegate{
+//        var view : NSView?
+//        func animationDidEnd(_ animation: NSAnimation) {
+//            self.view?.isHidden = false
+//       }
+//   }
+    
 
 //    public func addText(){
 //        print(boundsAndColors)

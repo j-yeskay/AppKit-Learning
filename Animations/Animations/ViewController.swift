@@ -9,33 +9,53 @@ import Foundation
 import AppKit
 
 
-public class ViewController : NSViewController{
-    
-    public var datePicker : DatePicker!
-    public var collectionViewManager : CollectionViewManager!
+public class ViewController: NSViewController {
+    public var collectionViewManager: CollectionViewManager!
+    public var calendarController: CalendarController!
 
+//    public var currentMonth: NSTextField!
+    
     public override func loadView() {
         self.view = NSView(frame: NSScreen.main!.frame)
+        collectionViewManager = CollectionViewManager()
+        calendarController = CalendarController()
+        calendarController.collectionViewManager = collectionViewManager
+        calendarController.generateDates()
+        collectionViewManager.collectionView.dataSource = collectionViewManager
+        collectionViewManager.scrollView.documentView = collectionViewManager.collectionView
+        collectionViewManager.collectionView.register(MyItem.self, forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "MyItem"))
         
-        datePicker = DatePicker(frame: NSRect(x: 100, y: 500, width: 150, height: 150))
-        datePicker.datePickerStyle = .clockAndCalendar
-        datePicker.wantsLayer = true
-        datePicker.backgroundColor = .clear
-        datePicker.datePickerElements = [.era, .timeZone,  .yearMonthDay]
-        datePicker.calendar = Calendar(identifier: .iso8601)
-        datePicker.dateValue = .now
-        datePicker.backgroundColor = .controlAccentColor
-        datePicker.sizeToFit()
-        
-        collectionViewManager = collectionViewManager()
-        
+        calendarController.nextbutton.target = calendarController
+        calendarController.previousbutton.target = calendarController
+
     }
-    
+
     public override func viewDidLoad() {
+        self.view.addSubview(collectionViewManager.scrollView)
+        self.view.addSubview(calendarController.previousbutton)
+        self.view.addSubview(calendarController.nextbutton)
+        self.view.addSubview(calendarController.currentMonth)
 
-//        self.view.addSubview(datePicker)
-
+        NSLayoutConstraint.activate([
+            collectionViewManager.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            collectionViewManager.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -500),
+            collectionViewManager.scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            collectionViewManager.scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            
+            
+            calendarController.previousbutton.leadingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -500),
+            calendarController.previousbutton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
+            calendarController.previousbutton.heightAnchor.constraint(equalToConstant: 50),
+            calendarController.previousbutton.widthAnchor.constraint(equalToConstant: 100),
+            
+            calendarController.nextbutton.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            calendarController.nextbutton.heightAnchor.constraint(equalToConstant: 50),
+            calendarController.nextbutton.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 100),
+            calendarController.nextbutton.widthAnchor.constraint(equalToConstant: 100),
+            
+            calendarController.currentMonth.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 115),
+            calendarController.currentMonth.leadingAnchor.constraint(equalTo: calendarController.previousbutton.trailingAnchor, constant: 100)
+            
+        ])
     }
-    
-
 }

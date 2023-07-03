@@ -49,6 +49,12 @@ import AppKit
 public class ViewController : NSViewController{
     public var tableViewManager : TableViewManager!
     
+    public var slider : NSSlider!
+    
+    @objc public func slided(){
+        
+    }
+    
     public override func loadView() {
         self.view = NSView(frame: NSScreen.main!.frame)
         
@@ -57,11 +63,21 @@ public class ViewController : NSViewController{
         
         self.tableViewManager.tableView.dataSource = self.tableViewManager
         self.tableViewManager.tableView.delegate = self.tableViewManager
+        
+        slider = {
+            let s = NSSlider(frame: NSRect(x: 100, y: 100, width: 50, height: 50))
+            s.minValue = 10
+            s.maxValue = 125
+            
+            return s
+        }()
     }
     
     public override func viewDidLoad() {
         self.view.addSubview(self.tableViewManager.scrollView)
-        
+        self.view.addSubview(slider)
+        slider.target = self
+        slider.action = #selector(slided)
         NSLayoutConstraint.activate([
             self.tableViewManager.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 100),
             self.tableViewManager.scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -100),

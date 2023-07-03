@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B1AE63E2A3B01740069EBED /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1AE63D2A3B01740069EBED /* SquareView.swift */; };
 		2B5FF5882A27026D008F45D2 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FF5872A27026D008F45D2 /* CircleView.swift */; };
 		2BD671FB2A261BFA00697AA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD671FA2A261BFA00697AA5 /* AppDelegate.swift */; };
 		2BD671FD2A261BFB00697AA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BD671FC2A261BFB00697AA5 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B1AE63D2A3B01740069EBED /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		2B5FF5872A27026D008F45D2 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		2BD671F72A261BFA00697AA5 /* Animations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD671FA2A261BFA00697AA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				2BD672072A261C6900697AA5 /* WindowController.swift */,
 				2BD672092A261C7100697AA5 /* ViewController.swift */,
 				2B5FF5872A27026D008F45D2 /* CircleView.swift */,
+				2B1AE63D2A3B01740069EBED /* SquareView.swift */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B5FF5882A27026D008F45D2 /* CircleView.swift in Sources */,
+				2B1AE63E2A3B01740069EBED /* SquareView.swift in Sources */,
 				2BD6720A2A261C7100697AA5 /* ViewController.swift in Sources */,
 				2BD671FB2A261BFA00697AA5 /* AppDelegate.swift in Sources */,
 				2BD672082A261C6900697AA5 /* WindowController.swift in Sources */,

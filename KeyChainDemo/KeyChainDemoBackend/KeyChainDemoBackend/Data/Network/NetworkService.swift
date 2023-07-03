@@ -68,6 +68,30 @@ extension NetworkService : CreateUserNetworkContract{
 }
 
 
+extension NetworkService : GetAllUsersNetworkContract{
+    public func getAllUsers(success: @escaping (([User]) -> Void), failure: @escaping ((String) -> Void)) {
+        let url = URL(string: "http://localhost:3000/users")!
+        
+        let urlRequest = URLRequest(url: url)
+        
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: urlRequest, completionHandler: {data, response, error in
+            DispatchQueue.main.async {
+                if let error = error{
+                    failure(error.localizedDescription)
+                }
+                else if response == nil{
+                    failure("No Internet")
+                }
+                else{
+                    success(try! JSONDecoder().decode([User].self, from: data!))
+                }
+            }
+        })
+    }
+}
+
+
 extension NetworkService : GetUserNetworkContract{
     public func getUser(userEmail: String, success: @escaping ((User) -> Void), failure: @escaping ((String) -> Void)) {
         let url = URL(string: "http://localhost:3000/users?email=\(userEmail)")!

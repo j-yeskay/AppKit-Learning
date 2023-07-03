@@ -9,10 +9,12 @@ import Foundation
 
 
 public class UserDataManager{
-    var network : CreateUserNetworkContract & LoginNetworkContract
+    var network : CreateUserNetworkContract & LoginNetworkContract & GetAllUsersNetworkContract
+    var database : CreateUserDatabaseContract & GetAllUsersDatabaseContract
     
-    public init(network : CreateUserNetworkContract & LoginNetworkContract) {
+    public init(network : CreateUserNetworkContract & LoginNetworkContract & GetAllUsersNetworkContract, database : CreateUserDatabaseContract & GetAllUsersDatabaseContract) {
         self.network = network
+        self.database = database
     }
 }
 
@@ -20,6 +22,18 @@ public class UserDataManager{
 extension UserDataManager : CreateUserDataManagerContract{
     public func createUser(userData: [String : String], success: @escaping ((User) -> Void), failure: @escaping ((String) -> Void)) {
         self.network.createUser(userData: userData, success: success, failure: failure)
+    }
+}
+
+
+extension UserDataManager : GetAllUsersDataManagerContract{
+    public func getAllUsers(success: @escaping (([User]) -> Void), failure: @escaping ((String) -> Void)) {
+        self.database.getAllUsers(success: success, failure: failure)
+        self.network.getAllUsers(success: {
+            
+        }, failure: {
+            
+        })
     }
 }
 
