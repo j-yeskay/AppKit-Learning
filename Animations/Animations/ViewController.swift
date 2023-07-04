@@ -27,6 +27,7 @@ public class ViewController: NSViewController {
         
         calendarController.nextbutton.target = calendarController
         calendarController.previousbutton.target = calendarController
+        calendarController.todaybutton.target = calendarController
 
     }
 
@@ -35,6 +36,7 @@ public class ViewController: NSViewController {
         self.view.addSubview(calendarController.previousbutton)
         self.view.addSubview(calendarController.nextbutton)
         self.view.addSubview(calendarController.currentMonth)
+        self.view.addSubview(calendarController.todaybutton)
 
         NSLayoutConstraint.activate([
             collectionViewManager.scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
@@ -54,7 +56,10 @@ public class ViewController: NSViewController {
             calendarController.nextbutton.widthAnchor.constraint(equalToConstant: 100),
             
             calendarController.currentMonth.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 115),
-            calendarController.currentMonth.leadingAnchor.constraint(equalTo: calendarController.previousbutton.trailingAnchor, constant: 100)
+            calendarController.currentMonth.leadingAnchor.constraint(equalTo: calendarController.previousbutton.trailingAnchor, constant: 100),
+            
+            calendarController.todaybutton.centerXAnchor.constraint(equalTo: calendarController.currentMonth.centerXAnchor),
+            calendarController.todaybutton.topAnchor.constraint(equalTo: calendarController.currentMonth.bottomAnchor, constant: 20)
             
         ])
     }

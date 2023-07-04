@@ -18,7 +18,19 @@ public class CollectionViewManager : NSObject, NSCollectionViewDataSource{
     public func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "MyItem"), for: indexPath)
         item.view.subviews = []
-        item.view.addSubview(NSTextField(labelWithString: "\(CalendarController.thisMonthDates[(indexPath.first! * 7) + indexPath.last!].formatted(date: .abbreviated, time: .omitted))"))
+        
+        let date = CalendarController.thisMonthDates[(indexPath.first! * 7) + indexPath.last!]
+        let dateString = "\(CalendarController.thisMonthDates[(indexPath.first! * 7) + indexPath.last!].formatted(date: .abbreviated, time: .omitted))"
+        
+        if dateString == Date().formatted(date: .abbreviated, time: .omitted){
+            let attributes : [NSAttributedString.Key: Any] = [.foregroundColor: NSColor.red]
+            let attributesString = NSAttributedString(string: dateString, attributes: attributes)
+            item.view.addSubview(NSTextField(labelWithAttributedString: attributesString))
+        }
+        else{
+            item.view.addSubview(NSTextField(labelWithString: dateString))
+        }
+       
         return item
     }
     

@@ -32,6 +32,14 @@ public class CalendarController{
         return button
     }()
     
+    public var todaybutton : NSButton = {
+        let button = NSButton()
+        button.title = "Today"
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.action = #selector(todayButtonClick)
+        return button
+    }()
+    
     public var currentMonth : NSTextField = {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM, YYYY"
@@ -53,6 +61,12 @@ public class CalendarController{
     public func nextButtonClick(){
         let newDate = Calendar(identifier: .iso8601).date(byAdding: .month, value: 1, to: CalendarController.date)!
         CalendarController.date = newDate
+        updateCurrentMonth()
+    }
+    
+    @objc
+    public func todayButtonClick(){
+        CalendarController.date = Date()
         updateCurrentMonth()
     }
     
